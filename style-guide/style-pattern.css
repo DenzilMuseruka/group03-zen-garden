@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+
 h2,
 h3,
 h4 {
-    font-family: "arial narrow", Arial, Verdana, sans-serif;
+    font-family: "indie flower", cursive;
     margin: 0;
 }
 
@@ -25,7 +28,7 @@ h2 {
 
 h3 {
     font-size: 2.25em;
-    font-weight: 200;
+    font-weight: 400;
     /* Thin */
     letter-spacing: 1px;
     line-height: 1em;
@@ -34,16 +37,27 @@ h3 {
 
 h4 {
     font-size: 1.5em;
-    font-weight: 200;
+    font-weight: 400;
     /* Thin */
     letter-spacing: 1px;
     line-height: 1em;
     margin: 0.5em 0;
 }
+h2 + p {
+    border: thin solid #228b22;
+    text-align: center;
+    margin: 10px 0;
+    background-color: #faedcd;
+   
+}
+.fonts p,  h4 {
+    letter-spacing: 2px;
+}
 
 p {
-    font-family: verdana, arial, sans-serif;
-    font-size: 1em;
+    font-family: 'Sue Ellen Francisco',
+        cursive;
+    font-size: 30px;
     line-height: 1.5em;
     padding: 0.5em 0;
     margin: 0;
@@ -68,7 +82,7 @@ a:hover {
 }
 
 .summary {
-    font-weight: 300;
+    /* font-weight: 300; */
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #fff;
@@ -106,12 +120,19 @@ html {
 }
 
 body {
-    font-family: verdana, arial, sans-serif;
-    font-size: 85%;
+    font-family: 'Sue Ellen Francisco',
+        cursive;;
+    font-size: larger;
     color: #333;
-    background-color: #faedcd;
+    background-color: #fff;
     margin: 0;
     padding: 1em;
+}
+.fonts {
+    background-color: #faedcd;
+    padding: 5px;
+    line-height: 20px;
+
 }
 
 /*# sourceMappingURL=style.css.map */
