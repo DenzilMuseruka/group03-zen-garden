@@ -20,6 +20,7 @@ body {
 }
 .introduction {
   background: linear-gradient(80deg, lighten($accent1,10), $accent2, lighten($background-color,20));
+  padding: 1em;
 }
 
 section {

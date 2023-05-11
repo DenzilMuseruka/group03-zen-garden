@@ -30,7 +30,7 @@ h3 {
   font-weight: 400;
   letter-spacing: 1px;
   line-height: 1em;
-  padding: 0.5em 0 0.25em 0;
+  padding: 0.5em 0 0 0;
 }
 
 h4 {
@@ -50,6 +50,16 @@ p {
   margin: 0;
 }
 
+p::first-letter {
+  color: #faedcd;
+  font-size: 2.3em;
+  line-height: 0.3em;
+  float: left;
+  padding-right: 0.1em;
+  clear: both;
+  font-weight: bolder;
+}
+
 a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: #333;
@@ -59,6 +69,12 @@ a {
 
 a:hover {
   border-color: #228b22;
+}
+
+section h3 {
+  border-bottom: 10px solid #228b22;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
 }
 
 [role=banner] > h1 {
@@ -76,9 +92,9 @@ a:hover {
   padding: 15% 0;
 }
 .summary p:last-child {
-  border-top: 1px solid #228b22;
-  margin-top: 1em;
-  padding-top: 1.5em;
+  border-bottom: 10px solid #228b22;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
 }
 .summary a {
   color: #fff;
@@ -95,6 +111,33 @@ p {
   padding: 5px;
 }
 
+h2 {
+  background: linear-gradient(to top, #fff, rgb(243, 243, 140), #2cb42c);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  border-radius: 4px;
+  position: relative;
+  animation: move-left-right 5s ease-in-out infinite;
+}
+@keyframes move-left-right {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 50px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .intro {
   padding: 5%;
 }
@@ -104,7 +147,7 @@ p {
 }
 
 html {
-  background-color: #87ceeb;
+  background-color: rgba(121, 173, 32, 0.6352941176);
   padding: 5%;
 }
 
@@ -117,7 +160,8 @@ body {
 }
 
 .introduction {
-  background: linear-gradient(80deg, #2cb42c, #faedcd, #def2fa);
+  background: linear-gradient(80deg, #2cb42c, #faedcd, rgba(172, 223, 84, 0.6352941176));
+  padding: 1em;
 }
 
 section {

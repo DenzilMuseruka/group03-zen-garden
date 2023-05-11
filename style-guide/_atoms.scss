@@ -20,13 +20,52 @@
   color: $color;
 }
 @mixin divider($color: $accent1) {
-  border-top: 1px solid $color;
-  margin-top: 1em;
-  padding-top: 1.5em;
+  border-bottom: 10px solid $color;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
 }
+@mixin animated-border {
+  //border: 20px solid #333;
+  border-radius: 4px;
+  position: relative;
+  animation: move-left-right 5s ease-in-out infinite;
+
+  @keyframes move-left-right {
+    0% {
+      left: 0;
+    }
+    50% {
+    left: 50px;
+    }
+
+    100% {
+      left: 0;
+    }
+
+  }
+}
+@mixin webkit-background() {
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 @mixin linkhover($color:#fff, $background-color: $primary) {
   color: $color;
   background-color: $background-color;
+}
+@mixin firstletter($color: $accent1, $font-size:2.3em, $line-height: 0.3em, $float: left, $padding-right: 0.1em, $clear: both) {
+  color: $accent2;
+  font-size: $font-size;
+  line-height: $line-height;
+  float: $float;
+  padding-right: $padding-right;
+  clear: $clear;
+  font-weight: bolder;
 }
  
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
@@ -35,6 +74,7 @@ h3,
 h4 {
   font-family: $fonts-headline;
   margin: 0;
+  //@include divider();
 }
 h1 {
   background: $accent1;
@@ -50,13 +90,14 @@ h2 {
   font-size: 6em;
   letter-spacing: 1px;
   line-height: 1em;
+ 
 }
 h3 {
   font-size: 2.25em;
   font-weight: 400; 
   letter-spacing: 1px;
   line-height: 1em;
-  padding: 0.5em 0 0.25em 0;
+  padding: 0.5em 0 0 0;
 }
 h4 {
   font-size: 1.5em;
@@ -71,6 +112,9 @@ p {
   padding: 0.5em 0;
   margin: 0;
 }
+p::first-letter {
+  @include firstletter()
+}
 
 a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -80,4 +124,7 @@ a {
 }
 a:hover {
   border-color: $accent1;
+}
+section h3{
+  @include divider();
 }
