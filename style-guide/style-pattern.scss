@@ -63,7 +63,7 @@ section {
   padding: 1em;
 }
 .element a:hover {
-  @include atoms.linkhover();
+  @include atoms.link-hover();
   padding: 0.25rem;
 }
 .uppercase {

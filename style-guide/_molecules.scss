@@ -34,5 +34,8 @@ h2 {
     @include atoms.webkit-background();
 }
 h1 {
-  @include atoms.animated-border();
+  @include atoms.animated-block();
+}
+section h3 {
+  @include atoms.divider();
 }

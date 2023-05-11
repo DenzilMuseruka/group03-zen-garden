@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
 h2,
 h3,
@@ -71,12 +70,6 @@ a:hover {
   border-color: #228b22;
 }
 
-section h3 {
-  border-bottom: 10px solid #228b22;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
-}
-
 [role=banner] > h1 {
   font-weight: 400;
   letter-spacing: 2px;
@@ -136,6 +129,12 @@ h1 {
   100% {
     left: 0;
   }
+}
+
+section h3 {
+  border-bottom: 10px solid #228b22;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
 }
 
 .intro {
@@ -214,6 +213,8 @@ section {
 .element a:hover {
   color: #fff;
   background-color: #556b2f;
+  transition: background-color ease-in-out 1s;
+  transform: #556b2f;
   padding: 0.25rem;
 }
 

@@ -24,7 +24,7 @@
   margin-bottom: 1.2em;
   border-radius: 10px;
 }
-@mixin animated-border {
+@mixin animated-block {
   //border: 20px solid #333;
   border-radius: 4px;
   position: relative;
@@ -54,11 +54,14 @@
 }
 
 
-@mixin linkhover($color:#fff, $background-color: $primary) {
+@mixin link-hover($color:#fff, $background-color: $primary) {
   color: $color;
   background-color: $background-color;
+  transition: background-color ease-in-out 1s ;
+  transform: $background-color;
+  
 }
-@mixin firstletter($color: $accent1, $font-size:2.3em, $line-height: 0.3em, $float: left, $padding-right: 0.1em, $clear: both) {
+@mixin first-letter($color: $accent1, $font-size:2.3em, $line-height: 0.3em, $float: left, $padding-right: 0.1em, $clear: both) {
   color: $accent2;
   font-size: $font-size;
   line-height: $line-height;
@@ -74,7 +77,6 @@ h3,
 h4 {
   font-family: $fonts-headline;
   margin: 0;
-  //@include divider();
 }
 h1 {
   background: $accent1;
@@ -113,7 +115,7 @@ p {
   margin: 0;
 }
 p::first-letter {
-  @include firstletter()
+  @include first-letter()
 }
 
 a {
@@ -125,6 +127,4 @@ a {
 a:hover {
   border-color: $accent1;
 }
-section h3{
-  @include divider();
-}
+
