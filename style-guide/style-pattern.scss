@@ -13,17 +13,20 @@ html {
 
 body {
   font-family: $fonts-body;
-  font-size: 85%;
   color: $text-dark;
   background-color: $primary;
   margin: 0;
   padding: 1em;
 }
+.introduction {
+  background: linear-gradient(80deg, lighten($accent1,10), $accent2, lighten($background-color,20));
+}
 
 section {
-  background-color: white;
+  background-color: #fff;
   padding: 1em;
   margin: 1em;
+  
 }
 .colors {
   @include atoms.set-flex();
@@ -58,9 +61,19 @@ section {
   margin: 0.5em;
   padding: 1em;
 }
+.element a:hover {
+  @include atoms.linkhover();
+  padding: 0.25rem;
+}
 .uppercase {
   @include atoms.uppercase;
 }
 .uppercase-light {
   @include atoms.uppercase($text-light);
+}
+header h1 {
+  float: right;
+}
+main h2 {
+  margin-top: 10px;
 }

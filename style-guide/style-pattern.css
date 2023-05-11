@@ -1,138 +1,198 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
 h2,
 h3,
 h4 {
-    font-family: "indie flower", cursive;
-    margin: 0;
+  font-family: "indie flower", cursive;
+  margin: 0;
 }
 
 h1 {
-    background: linear-gradient(80deg, #556b2f, #2db42d);
-    color: #fff;
-    display: inline-block;
-    font-weight: normal;
-    margin-bottom: 1em;
-    padding: 0.5em 1em;
+  background: #228b22;
+  color: #fff;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
 }
 
 h2 {
-    color: #228b22;
-    font-weight: 900;
-    /* Heavy */
-    font-size: 6em;
-    letter-spacing: 1px;
-    line-height: 1em;
+  color: #fff;
+  font-weight: 900; /* Heavy */
+  font-size: 6em;
+  letter-spacing: 1px;
+  line-height: 1em;
 }
 
 h3 {
-    font-size: 2.25em;
-    font-weight: 400;
-    /* Thin */
-    letter-spacing: 1px;
-    line-height: 1em;
-    padding: 0.5em 0 0.25em 0;
+  font-size: 2.25em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1em;
+  padding: 0.5em 0 0.25em 0;
 }
 
 h4 {
-    font-size: 1.5em;
-    font-weight: 400;
-    /* Thin */
-    letter-spacing: 1px;
-    line-height: 1em;
-    margin: 0.5em 0;
-}
-h2 + p {
-    border: thin solid #228b22;
-    text-align: center;
-    margin: 10px 0;
-    background-color: #faedcd;
-   
-}
-.fonts p,  h4 {
-    letter-spacing: 2px;
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1em;
+  margin: 0.5em 0;
 }
 
 p {
-    font-family: 'Sue Ellen Francisco',
-        cursive;
-    font-size: 30px;
-    line-height: 1.5em;
-    padding: 0.5em 0;
-    margin: 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #333;
+  padding: 0.5em 0;
+  margin: 0;
 }
 
 a {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    color: #333;
-    text-decoration: none;
-    transition: border-color 0.2s ease-in-out;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color: #333;
+  text-decoration: none;
+  transition: border-color 0.2s ease-in-out;
 }
 
 a:hover {
-    border-color: #228b22;
+  border-color: #228b22;
 }
 
-[role=banner]>h1 {
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
+[role=banner] > h1 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .summary {
-    /* font-weight: 300; */
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
-    padding: 15% 0;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 15% 0;
 }
-
 .summary p:last-child {
-    border-top: 1px solid #ea2e49;
-    margin-top: 1em;
-    padding-top: 1.5em;
+  border-top: 1px solid #228b22;
+  margin-top: 1em;
+  padding-top: 1.5em;
 }
-
 .summary a {
-    color: #fff;
+  color: #fff;
 }
 
 .preamble {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    margin-left: -30%;
-    padding: 5% 5% 5% 30%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  margin-left: -30%;
+  padding: 5% 5% 5% 30%;
+}
+
+p {
+  padding: 5px;
 }
 
 .intro {
-    padding: 5%;
+  padding: 5%;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    background-color:  #87ceeb;
-    padding: 5%;
+  background-color: #87ceeb;
+  padding: 5%;
 }
 
 body {
-    font-family: 'Sue Ellen Francisco',
-        cursive;;
-    font-size: larger;
-    color: #333;
-    background-color: #fff;
-    margin: 0;
-    padding: 1em;
-}
-.fonts {
-    background-color: #faedcd;
-    padding: 5px;
-    line-height: 20px;
-
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #333;
+  background-color: #556b2f;
+  margin: 0;
+  padding: 1em;
 }
 
-/*# sourceMappingURL=style.css.map */
+.introduction {
+  background: linear-gradient(80deg, #2cb42c, #faedcd, #def2fa);
+}
+
+section {
+  background-color: #fff;
+  padding: 1em;
+  margin: 1em;
+}
+
+.colors {
+  display: flex;
+  flex-flow: row wrap;
+}
+.colors > h3 {
+  width: 100%;
+  flex: 1 0 100%;
+}
+.colors > figure {
+  margin: 0;
+  flex: 1 1 25%;
+}
+
+.swatch {
+  width: 100%;
+  height: 100px;
+  border: 1px solid;
+}
+
+.primary {
+  background-color: #556b2f;
+}
+
+.accent1 {
+  background-color: #228b22;
+}
+
+.accent2 {
+  background-color: #faedcd;
+}
+
+.text-dark {
+  background-color: #333;
+}
+
+.element {
+  border: 1px solid;
+  margin: 0.5em;
+  padding: 1em;
+}
+
+.element a:hover {
+  color: #fff;
+  background-color: #556b2f;
+  padding: 0.25rem;
+}
+
+.uppercase {
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.uppercase-light {
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+header h1 {
+  float: right;
+}
+
+main h2 {
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=style-pattern.css.map */
