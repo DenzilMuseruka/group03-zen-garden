@@ -71,6 +71,7 @@ section {
 }
 .uppercase-light {
   @include atoms.uppercase($text-light);
+  
 }
 header h1 {
   float: right;

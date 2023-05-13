@@ -41,7 +41,6 @@
     100% {
       left: 0;
     }
-
   }
 }
 @mixin webkit-background() {
@@ -59,16 +58,36 @@
   background-color: $background-color;
   transition: background-color ease-in-out 1s ;
   transform: $background-color;
-  
 }
-@mixin first-letter($color: $accent1, $font-size:2.3em, $line-height: 0.3em, $float: left, $padding-right: 0.1em, $clear: both) {
+
+@mixin first-letter($color: $accent1, $font-size: 3em, $line-height: 0.5em, $float: left,  $clear: both) {
   color: $accent2;
   font-size: $font-size;
   line-height: $line-height;
   float: $float;
-  padding-right: $padding-right;
+  //padding-right: $padding-right;
   clear: $clear;
   font-weight: bolder;
+  margin: .20em;
+}
+@mixin center-items($width:90%, $max-width:100%) {
+  width: $width;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin breakpoint($size) {
+  @if $size ==small {
+    @media (min-width: 30em) {
+      @content;
+    }
+  }
+
+  @else if $size ==large {
+    @media (min-width: 65em) {
+      @content;
+    }
+  }
 }
  
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
@@ -114,7 +133,7 @@ p {
   padding: 0.5em 0;
   margin: 0;
 }
-p::first-letter {
+p:first-of-type:first-letter {
   @include first-letter()
 }
 
