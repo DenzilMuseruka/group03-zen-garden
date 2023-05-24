@@ -79,3 +79,16 @@ header h1 {
 main h2 {
   margin-top: 10px;
 }
+h2 {
+  background: linear-gradient(to top, $text-light, $grey-sidebar, lighten($accent1,
+        10));
+  @include atoms.webkit-background();
+}
+
+h1 {
+  @include atoms.animated-block();
+}
+
+section h3 {
+  @include atoms.divider();
+}

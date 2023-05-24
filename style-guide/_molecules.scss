@@ -11,31 +11,61 @@
 }
 .summary {
   @include atoms.uppercase($text-light);
-  padding: 15% 0;
-  p:last-child {
-    @include atoms.divider;
-  }
+  padding: 5% 0;
+  // p:last-child {
+  //   @include atoms.divider;
+  // }
   a {
     color: $text-light; //in this case the link wants to be light instead of the default dark
   }
 }
-.preamble {
-  background: rgba(255, 255, 255, 0.9);
-  color: $text-dark;
-  margin-left: -30%;
-  padding: 5% 5% 5% 30%;
-}
 p {
   padding: 5px;
 }
-h2 {
-    background: linear-gradient(to top, $text-light, $grey-sidebar, lighten($accent1,
-            10));
-    @include atoms.webkit-background();
-}
-h1 {
-  @include atoms.animated-block();
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 section h3 {
   @include atoms.divider();
 }
+
+
+.design-selection ul,
+.design-archives ul{
+  width: 100%;
+  // height: 50%;
+  background-image: linear-gradient(69deg, transparent 80%, saturate($background-color, 10) 80%);
+  background-color: $primary;
+  padding: 1rem;
+  color: $grey-sidebar;
+  list-style-position: inside;
+  overflow: hidden;
+
+  li a:first-child::after {
+    content: ' 🌿';
+  }
+
+  li a:last-child::after {
+    content: ' 🌿';
+  }
+
+  li a {
+    color: $grey-sidebar;
+    line-height: 2;
+  }
+}
+
+abbr {
+  cursor: help;
+  color: $primary;
+}
+p {
+  padding: 5px;
+}
+

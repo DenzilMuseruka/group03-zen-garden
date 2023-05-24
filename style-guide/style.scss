@@ -1,112 +1,241 @@
-h2,
-h3,
-h4 {
-  font-family: "arial narrow", Arial, Verdana, sans-serif;
-  margin: 0;
-}
-
-h1 {
-  background: #ea2e49;
-  color: #fff;
-  display: inline-block;
-  font-weight: normal;
-  margin-bottom: 1em;
-  padding: 0.5em 1em;
-}
-
-h2 {
-  color: #fff;
-  font-weight: 900; /* Heavy */
-  font-size: 6em;
-  letter-spacing: 1px;
-  line-height: 1em;
-}
-
-h3 {
-  font-size: 2.25em;
-  font-weight: 200; /* Thin */
-  letter-spacing: 1px;
-  line-height: 1em;
-  padding: 0.5em 0 0.25em 0;
-}
-
-h4 {
-  font-size: 1.5em;
-  font-weight: 200; /* Thin */
-  letter-spacing: 1px;
-  line-height: 1em;
-  margin: 0.5em 0;
-}
-
-p {
-  font-family: verdana, arial, sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-  padding: 0.5em 0;
-  margin: 0;
-}
-
-a {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  color: #333;
-  text-decoration: none;
-  transition: border-color 0.2s ease-in-out;
-}
-
-a:hover {
-  border-color: #ea2e49;
-}
-
-[role=banner] > h1 {
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.summary {
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 15% 0;
-}
-.summary p:last-child {
-  border-top: 1px solid #ea2e49;
-  margin-top: 1em;
-  padding-top: 1.5em;
-}
-.summary a {
-  color: #fff;
-}
-
-.preamble {
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
-  margin-left: -30%;
-  padding: 5% 5% 5% 30%;
-}
-
-.intro {
-  padding: 5%;
-}
-
+@use 'variables' as *; //this puts all the variables in the global namespace.
+@use 'atoms';
+@use 'molecules';
+@use 'organisms' as o;
 * {
   box-sizing: border-box;
 }
-
 html {
-  background-color: #daede2;
+  background-color: $background-color;
   padding: 5%;
+  margin: 0;
 }
 
-body {
-  font-family: verdana, arial, sans-serif;
-  font-size: 85%;
-  color: #333;
-  background-color: #77c4d3;
+h2,
+h3,
+h4 {
+  font-family: $fonts-headline;
   margin: 0;
-  padding: 1em;
+}
+
+@media only screen and (min-width: 65em) {
+  body {
+    font-family: $fonts-body;
+    color: $text-dark;
+    background-color: $primary;
+    margin: 0;
+    padding: 1em;
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .page-wrapper {
+    background: linear-gradient(80deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+    padding: 1em;
+  }
+  .intro {
+    position: relative;
+    padding: 5%;
+  }
+  h1 {
+    top: 13rem;
+    left: 14rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transform: rotate(10deg);
+    border: 2px solid black;
+    @include atoms.animated-block;
+
+  }
+
+  [role="banner"]::before {
+    content: "";
+    display: block;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-top: 3px solid black;
+    position: absolute;
+    top: 14rem;
+    left: 21rem;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    color: black;
+    transform: rotate(10deg);
+  }
+
+  h2 {
+    //padding-bottom: 2rem;
+    width: 100%;
+    color: $primary;
+    font-size: 50px;
+    position: absolute;
+    top: 420px;
+  }
+
+  header {
+    background-image: url(assets/boris-smokrovic-DPXytK8Z59Y-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    padding: 0.5rem;
+    height: 500px;
+  }
+
+  .summary p:first-of-type:first-letter {
+    @include atoms.first-letter();
+  }
+
+  .summary {
+    display: grid;
+    grid-template-columns: 600px 300px;
+    text-align: left;
+    gap: 2em;
+    justify-content: space-between;
+
+    :first-child:not(abbr):not(a) {
+      grid-column: 1/2;
+      border-left: 2px solid $primary;
+      border-bottom: 2px solid $primary;
+    }
+
+    :last-child:not(abbr):not(a) {
+      border-top: 2px solid $primary;
+      border-right: 2px solid $primary;
+      align-self: center;
+    }
+  }
+
+  .preamble {
+    position: relative;
+    padding: 2%;
+
+    p:first-of-type:first-letter {
+      @include atoms.first-letter();
+    }
+
+  }
+
+  .preamble::after {
+    content: "";
+    background-image: url(assets/road.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 15px black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 20%;
+    z-index: 2;
+
+  }
+
+  .preamble :is(p) {
+    padding: 0.25rem;
+    font-weight: 600;
+    color: black;
+
+    position: relative;
+    z-index: 1;
+    opacity: 100%;
+
+  }
+
+  .preamble h3 {
+    border: none;
+    text-align: center;
+
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: auto 400px;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 2em;
+    padding: 2%;
+  }
+
+  .explanation {
+    grid-column: span 2;
+    grid-row: 1/2;
+  }
+
+  .participation {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .benefits {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    padding: .5rem;
+    margin: auto;
+    //margin-top: 15px;
+    opacity: 100%;
+    width: 350px;
+    height: 350px;
+  }
+
+  .benefits::before {
+    content: "";
+    background-image: url(rsz_1420181-pdrod5-69.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0.2rem;
+    opacity: 15%;
+    z-index: 2;
+    animation: rotate 30s linear infinite;
+    line-height: 2.5em;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  .benefits>h3 {
+    //align-self: baseline;
+    margin-bottom: 20px;
+
+  }
+
+  .requirements {
+    grid-column: span 2;
+    grid-row: 3/4;
+    column-count: 2;
+    padding-bottom: 30px;
+    // border-bottom: 5px solid black;
+    @include atoms.divider
+  }
+
+  [role="contentinfo"] {
+    font-style: italic;
+  }
+
+
+  footer {
+    display: none;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 390px auto auto;
+    gap: 2em;
+  }
+
+  .design-selection ul li a {
+    grid-column: 1/2;
+  }
+
+  footer {
+    grid-row: inherit;
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

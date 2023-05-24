@@ -6,6 +6,7 @@
   font-size: $size;
   line-height: $line-height;
   color: $color;
+  font-weight: 600;
 }
 
 @mixin set-flex($direction: row, $wrap: wrap) {
@@ -20,7 +21,7 @@
   color: $color;
 }
 @mixin divider($color: $accent1) {
-  border-bottom: 10px solid $color;
+  border-bottom: 5px solid $color;
   margin-bottom: 1.2em;
   border-radius: 10px;
 }
@@ -32,14 +33,14 @@
 
   @keyframes move-left-right {
     0% {
-      left: 0;
+        transform: rotate(0deg);
     }
     50% {
-    left: 50px;
+      transform: rotate(7deg);
     }
-
+  
     100% {
-      left: 0;
+      transform: rotate(0deg);
     }
   }
 }
@@ -69,6 +70,7 @@
   clear: $clear;
   font-weight: bolder;
   margin: .20em;
+  text-shadow: 2px 2px 2px $primary;
 }
 @mixin center-items($width:90%, $max-width:100%) {
   width: $width;
@@ -115,7 +117,7 @@ h2 {
 }
 h3 {
   font-size: 2.25em;
-  font-weight: 400; 
+  font-weight: 600; 
   letter-spacing: 1px;
   line-height: 1em;
   padding: 0.5em 0 0 0;
@@ -133,9 +135,9 @@ p {
   padding: 0.5em 0;
   margin: 0;
 }
-p:first-of-type:first-letter {
-  @include first-letter()
-}
+// p:first-of-type:first-letter {
+//   @include first-letter()
+// }
 
 a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -143,7 +145,13 @@ a {
   text-decoration: none;
   transition: border-color 0.2s ease-in-out;
 }
-a:hover {
-  border-color: $accent1;
+.design-selection a {
+  border-bottom: none;
+}
+
+a:hover,
+.design-selection a:hover {
+  border-bottom: 1px solid $grey-sidebar;
+
 }
 

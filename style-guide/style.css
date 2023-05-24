@@ -1,12 +1,15 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
 h2,
 h3,
 h4 {
-  font-family: "arial narrow", Arial, Verdana, sans-serif;
+  font-family: "indie flower", cursive;
   margin: 0;
 }
 
 h1 {
-  background: #ea2e49;
+  background: #228b22;
   color: #fff;
   display: inline-block;
   font-weight: normal;
@@ -24,24 +27,26 @@ h2 {
 
 h3 {
   font-size: 2.25em;
-  font-weight: 200; /* Thin */
+  font-weight: 600;
   letter-spacing: 1px;
   line-height: 1em;
-  padding: 0.5em 0 0.25em 0;
+  padding: 0.5em 0 0 0;
 }
 
 h4 {
   font-size: 1.5em;
-  font-weight: 200; /* Thin */
+  font-weight: 400;
   letter-spacing: 1px;
   line-height: 1em;
   margin: 0.5em 0;
 }
 
 p {
-  font-family: verdana, arial, sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: 1em;
   line-height: 1.5em;
+  color: #333;
+  font-weight: 600;
   padding: 0.5em 0;
   margin: 0;
 }
@@ -53,40 +58,82 @@ a {
   transition: border-color 0.2s ease-in-out;
 }
 
-a:hover {
-  border-color: #ea2e49;
+.design-selection a {
+  border-bottom: none;
+}
+
+a:hover,
+.design-selection a:hover {
+  border-bottom: 1px solid rgb(243, 243, 140);
 }
 
 [role=banner] > h1 {
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
 }
 
 .summary {
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
-  padding: 15% 0;
+  padding: 5% 0;
 }
-
-.summary p:last-child {
-  border-top: 1px solid #ea2e49;
-  margin-top: 1em;
-  padding-top: 1.5em;
-}
-
 .summary a {
   color: #fff;
 }
 
-.preamble {
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
-  margin-left: -30%;
-  padding: 5% 5% 5% 30%;
+p {
+  padding: 5px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+section h3 {
+  border-bottom: 5px solid #228b22;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
+}
+
+.design-selection ul,
+.design-archives ul {
+  width: 100%;
+  background-image: linear-gradient(69deg, transparent 80%, rgba(124, 183, 22, 0.6352941176) 80%);
+  background-color: #556b2f;
+  padding: 1rem;
+  color: rgb(243, 243, 140);
+  list-style-position: inside;
+  overflow: hidden;
+}
+.design-selection ul li a:first-child::after,
+.design-archives ul li a:first-child::after {
+  content: " 🌿";
+}
+.design-selection ul li a:last-child::after,
+.design-archives ul li a:last-child::after {
+  content: " 🌿";
+}
+.design-selection ul li a,
+.design-archives ul li a {
+  color: rgb(243, 243, 140);
+  line-height: 2;
+}
+
+abbr {
+  cursor: help;
+  color: #556b2f;
+}
+
+p {
+  padding: 5px;
 }
 
 .intro {
@@ -98,19 +145,230 @@ a:hover {
 }
 
 html {
-  background-color: #daede2;
+  background-color: rgba(121, 173, 32, 0.6352941176);
   padding: 5%;
-}
-
-body {
-  font-family: verdana, arial, sans-serif;
-  font-size: 85%;
-  color: #333;
-  background-color: #77c4d3;
   margin: 0;
-  padding: 1em;
 }
 
+h2,
+h3,
+h4 {
+  font-family: "indie flower", cursive;
+  margin: 0;
+}
+
+@media only screen and (min-width: 65em) {
+  body {
+    font-family: "Montserrat Alternates", sans-serif;
+    color: #333;
+    background-color: #556b2f;
+    margin: 0;
+    padding: 1em;
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .page-wrapper {
+    background: linear-gradient(80deg, #31c831, #f5dc9f, rgba(172, 223, 84, 0.6352941176));
+    padding: 1em;
+  }
+  .intro {
+    position: relative;
+    padding: 5%;
+  }
+  h1 {
+    top: 13rem;
+    left: 14rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transform: rotate(10deg);
+    border: 2px solid black;
+    border-radius: 4px;
+    position: relative;
+    animation: move-left-right 5s ease-in-out infinite;
+  }
+  @keyframes move-left-right {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(7deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  [role=banner]::before {
+    content: "";
+    display: block;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-top: 3px solid black;
+    position: absolute;
+    top: 14rem;
+    left: 21rem;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    color: black;
+    transform: rotate(10deg);
+  }
+  h2 {
+    width: 100%;
+    color: #556b2f;
+    font-size: 50px;
+    position: absolute;
+    top: 420px;
+  }
+  header {
+    background-image: url(assets/boris-smokrovic-DPXytK8Z59Y-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    padding: 0.5rem;
+    height: 500px;
+  }
+  .summary p:first-of-type:first-letter {
+    color: #faedcd;
+    font-size: 3em;
+    line-height: 0.5em;
+    float: left;
+    clear: both;
+    font-weight: bolder;
+    margin: 0.2em;
+    text-shadow: 2px 2px 2px #556b2f;
+  }
+  .summary {
+    display: grid;
+    grid-template-columns: 600px 300px;
+    text-align: left;
+    gap: 2em;
+    justify-content: space-between;
+  }
+  .summary :first-child:not(abbr):not(a) {
+    grid-column: 1/2;
+    border-left: 2px solid #556b2f;
+    border-bottom: 2px solid #556b2f;
+  }
+  .summary :last-child:not(abbr):not(a) {
+    border-top: 2px solid #556b2f;
+    border-right: 2px solid #556b2f;
+    align-self: center;
+  }
+  .preamble {
+    position: relative;
+    padding: 2%;
+  }
+  .preamble p:first-of-type:first-letter {
+    color: #faedcd;
+    font-size: 3em;
+    line-height: 0.5em;
+    float: left;
+    clear: both;
+    font-weight: bolder;
+    margin: 0.2em;
+    text-shadow: 2px 2px 2px #556b2f;
+  }
+  .preamble::after {
+    content: "";
+    background-image: url(assets/road.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 15px black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 20%;
+    z-index: 2;
+  }
+  .preamble :is(p) {
+    padding: 0.25rem;
+    font-weight: 600;
+    color: black;
+    position: relative;
+    z-index: 1;
+    opacity: 100%;
+  }
+  .preamble h3 {
+    border: none;
+    text-align: center;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: auto 400px;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 2em;
+    padding: 2%;
+  }
+  .explanation {
+    grid-column: span 2;
+    grid-row: 1/2;
+  }
+  .participation {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .benefits {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem;
+    margin: auto;
+    opacity: 100%;
+    width: 350px;
+    height: 350px;
+  }
+  .benefits::before {
+    content: "";
+    background-image: url(rsz_1420181-pdrod5-69.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0.2rem;
+    opacity: 15%;
+    z-index: 2;
+    animation: rotate 30s linear infinite;
+    line-height: 2.5em;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+  .benefits > h3 {
+    margin-bottom: 20px;
+  }
+  .requirements {
+    grid-column: span 2;
+    grid-row: 3/4;
+    column-count: 2;
+    padding-bottom: 30px;
+    border-bottom: 5px solid #228b22;
+    margin-bottom: 1.2em;
+    border-radius: 10px;
+  }
+  [role=contentinfo] {
+    font-style: italic;
+  }
+  footer {
+    display: none;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 390px auto auto;
+    gap: 2em;
+  }
+  .design-selection ul li a {
+    grid-column: 1/2;
+  }
+  footer {
+    grid-row: inherit;
+    display: block;
+  }
+}
 
 
 /*# sourceMappingURL=style.css.map */
