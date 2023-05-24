@@ -204,33 +204,65 @@ p {
 
 
   footer {
-    display: none;
+    display: flex;
+    grid-column: 1/-1;
+    width: 100%;
+    a {
+      flex: 1 auto;
+      justify-content: space-between;
+      border-bottom: none;
+      text-align: center;
+      padding: 0.2rem;
+      @include atoms.divider
+    }
   }
 
   .wrapper {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     gap: 2em;
   }
 
   .design-selection ul li a {
     grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .indicator {
+    font-size: 32px;
+  }
+  .design-archives ul {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .zen-resources {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    h3 {
+      display: none;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    a {
+      text-decoration: none;
+      border-bottom: none;
+      flex: 1 auto;
+    }
   }
 
-  footer {
-    grid-row: inherit;
-    display: block;
-  }
   .design-selection ul,
   .design-archives ul {
     width: 100%;
-    // height: 50%;
-    background-image: linear-gradient(69deg, transparent 80%, saturate($background-color, 10) 80%);
+    background-image: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
     background-color: $primary;
     padding: 1rem;
     color: $grey-sidebar;
     list-style-position: inside;
-    overflow: hidden;
     border-radius: 5px;
     
     li a:first-child::after {

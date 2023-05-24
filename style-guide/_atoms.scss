@@ -21,9 +21,8 @@
   color: $color;
 }
 @mixin divider($color: $accent1) {
-  border-bottom: 5px solid $color;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
+  border-bottom: 15px solid $color;
+  border-top-left-radius: 100%;
 }
 @mixin animated-block {
   //border: 20px solid #333;

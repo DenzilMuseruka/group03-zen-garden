@@ -113,9 +113,8 @@ a:hover,
   }
 }
 section h3 {
-  border-bottom: 5px solid #228b22;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
+  border-bottom: 15px solid #228b22;
+  border-top-left-radius: 100%;
 }
 
 .preamble p:first-of-type:first-letter {
@@ -130,9 +129,8 @@ section h3 {
 }
 
 .requirements {
-  border-bottom: 5px solid #228b22;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
+  border-bottom: 15px solid #228b22;
+  border-top-left-radius: 100%;
 }
 
 .intro {
@@ -266,9 +264,8 @@ h1 {
 }
 
 section h3 {
-  border-bottom: 5px solid #228b22;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
+  border-bottom: 15px solid #228b22;
+  border-top-left-radius: 100%;
 }
 
 /*# sourceMappingURL=style-pattern.css.map */

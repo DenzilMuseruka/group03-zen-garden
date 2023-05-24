@@ -114,9 +114,8 @@ a:hover,
   }
 }
 section h3 {
-  border-bottom: 5px solid #228b22;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
+  border-bottom: 15px solid #228b22;
+  border-top-left-radius: 100%;
 }
 
 .preamble p:first-of-type:first-letter {
@@ -131,9 +130,8 @@ section h3 {
 }
 
 .requirements {
-  border-bottom: 5px solid #228b22;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
+  border-bottom: 15px solid #228b22;
+  border-top-left-radius: 100%;
 }
 
 .intro {
@@ -321,29 +319,63 @@ p {
     font-style: italic;
   }
   footer {
-    display: none;
+    display: flex;
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  footer a {
+    flex: 1 auto;
+    justify-content: space-between;
+    border-bottom: none;
+    text-align: center;
+    padding: 0.2rem;
+    border-bottom: 15px solid #228b22;
+    border-top-left-radius: 100%;
   }
   .wrapper {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     gap: 2em;
   }
   .design-selection ul li a {
     grid-column: 1/2;
+    grid-row: 1/2;
   }
-  footer {
-    grid-row: inherit;
-    display: block;
+  .indicator {
+    font-size: 32px;
+  }
+  .design-archives ul {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .zen-resources {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+  .zen-resources h3 {
+    display: none;
+  }
+  .zen-resources ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .zen-resources a {
+    text-decoration: none;
+    border-bottom: none;
+    flex: 1 auto;
   }
   .design-selection ul,
   .design-archives ul {
     width: 100%;
-    background-image: linear-gradient(69deg, transparent 80%, rgba(124, 183, 22, 0.6352941176) 80%);
+    background-image: linear-gradient(57deg, transparent 80%, rgba(124, 183, 22, 0.6352941176) 80%);
     background-color: #556b2f;
     padding: 1rem;
     color: rgb(243, 243, 140);
     list-style-position: inside;
-    overflow: hidden;
     border-radius: 5px;
   }
   .design-selection ul li a:first-child::after,
