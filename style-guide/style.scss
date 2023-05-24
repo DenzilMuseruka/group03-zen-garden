@@ -46,8 +46,6 @@ p {
     border-radius: 6px;
     transform: rotate(10deg);
     border: 2px solid black;
-    @include atoms.animated-block;
-
   }
 
   [role="banner"]::before {
@@ -85,23 +83,17 @@ p {
     height: 500px;
   }
 
-  .summary p:first-of-type:first-letter {
-    @include atoms.first-letter();
-  }
-
   .summary {
     display: grid;
     grid-template-columns: 600px 300px;
     text-align: left;
     gap: 2em;
     justify-content: space-between;
-
     :first-child:not(abbr):not(a) {
       grid-column: 1/2;
       border-left: 2px solid $primary;
       border-bottom: 2px solid $primary;
     }
-
     :last-child:not(abbr):not(a) {
       border-top: 2px solid $primary;
       border-right: 2px solid $primary;
@@ -112,11 +104,6 @@ p {
   .preamble {
     position: relative;
     padding: 2%;
-
-    p:first-of-type:first-letter {
-      @include atoms.first-letter();
-    }
-
   }
 
   .preamble::after {
@@ -131,24 +118,20 @@ p {
     inset: 0;
     opacity: 20%;
     z-index: 2;
-
   }
 
   .preamble :is(p) {
     padding: 0.25rem;
     font-weight: 600;
     color: black;
-
     position: relative;
     z-index: 1;
     opacity: 100%;
-
   }
 
   .preamble h3 {
     border: none;
     text-align: center;
-
   }
 
   .main {
@@ -212,7 +195,7 @@ p {
     column-count: 2;
     padding-bottom: 30px;
     // border-bottom: 5px solid black;
-    @include atoms.divider
+    
   }
 
   [role="contentinfo"] {
@@ -226,7 +209,7 @@ p {
 
   .wrapper {
     display: grid;
-    grid-template-columns: 390px auto auto;
+    grid-template-columns: auto auto auto;
     gap: 2em;
   }
 

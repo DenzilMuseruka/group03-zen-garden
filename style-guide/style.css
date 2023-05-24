@@ -68,6 +68,20 @@ a:hover,
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
+  border-radius: 4px;
+  position: relative;
+  animation: move-left-right 5s ease-in-out infinite;
+}
+@keyframes move-left-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .summary {
@@ -80,6 +94,16 @@ a:hover,
 .summary a {
   color: #fff;
 }
+.summary p:first-of-type:first-letter {
+  color: #faedcd;
+  font-size: 3em;
+  line-height: 0.5em;
+  float: left;
+  clear: both;
+  font-weight: bolder;
+  margin: 0.2em;
+  text-shadow: 2px 2px 2px #556b2f;
+}
 
 @keyframes rotate {
   from {
@@ -90,6 +114,23 @@ a:hover,
   }
 }
 section h3 {
+  border-bottom: 5px solid #228b22;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
+}
+
+.preamble p:first-of-type:first-letter {
+  color: #faedcd;
+  font-size: 3em;
+  line-height: 0.5em;
+  float: left;
+  clear: both;
+  font-weight: bolder;
+  margin: 0.2em;
+  text-shadow: 2px 2px 2px #556b2f;
+}
+
+.requirements {
   border-bottom: 5px solid #228b22;
   margin-bottom: 1.2em;
   border-radius: 10px;
@@ -145,20 +186,6 @@ p {
     border-radius: 6px;
     transform: rotate(10deg);
     border: 2px solid black;
-    border-radius: 4px;
-    position: relative;
-    animation: move-left-right 5s ease-in-out infinite;
-  }
-  @keyframes move-left-right {
-    0% {
-      transform: rotate(0deg);
-    }
-    50% {
-      transform: rotate(7deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
   }
   [role=banner]::before {
     content: "";
@@ -191,16 +218,6 @@ p {
     padding: 0.5rem;
     height: 500px;
   }
-  .summary p:first-of-type:first-letter {
-    color: #faedcd;
-    font-size: 3em;
-    line-height: 0.5em;
-    float: left;
-    clear: both;
-    font-weight: bolder;
-    margin: 0.2em;
-    text-shadow: 2px 2px 2px #556b2f;
-  }
   .summary {
     display: grid;
     grid-template-columns: 600px 300px;
@@ -221,16 +238,6 @@ p {
   .preamble {
     position: relative;
     padding: 2%;
-  }
-  .preamble p:first-of-type:first-letter {
-    color: #faedcd;
-    font-size: 3em;
-    line-height: 0.5em;
-    float: left;
-    clear: both;
-    font-weight: bolder;
-    margin: 0.2em;
-    text-shadow: 2px 2px 2px #556b2f;
   }
   .preamble::after {
     content: "";
@@ -309,9 +316,6 @@ p {
     grid-row: 3/4;
     column-count: 2;
     padding-bottom: 30px;
-    border-bottom: 5px solid #228b22;
-    margin-bottom: 1.2em;
-    border-radius: 10px;
   }
   [role=contentinfo] {
     font-style: italic;
@@ -321,7 +325,7 @@ p {
   }
   .wrapper {
     display: grid;
-    grid-template-columns: 390px auto auto;
+    grid-template-columns: auto auto auto;
     gap: 2em;
   }
   .design-selection ul li a {

@@ -7,19 +7,19 @@
   > h1 {
     // notice we have to reference the 'atoms' namespace to find our mixins.
     @include atoms.uppercase($text-light);
+    @include atoms.animated-block;
   }
 }
 .summary {
   @include atoms.uppercase($text-light);
   padding: 5% 0;
-  // p:last-child {
-  //   @include atoms.divider;
-  // }
   a {
     color: $text-light; //in this case the link wants to be light instead of the default dark
   }
+  p:first-of-type:first-letter {
+    @include atoms.first-letter();
+  }
 }
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -32,6 +32,12 @@
 section h3 {
   @include atoms.divider();
 }
+.preamble p:first-of-type:first-letter {
+  @include atoms.first-letter();
+}
+.requirements {
+  @include atoms.divider
+} 
 
 
 

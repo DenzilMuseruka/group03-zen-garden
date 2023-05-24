@@ -67,6 +67,20 @@ a:hover,
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
+  border-radius: 4px;
+  position: relative;
+  animation: move-left-right 5s ease-in-out infinite;
+}
+@keyframes move-left-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .summary {
@@ -79,6 +93,16 @@ a:hover,
 .summary a {
   color: #fff;
 }
+.summary p:first-of-type:first-letter {
+  color: #faedcd;
+  font-size: 3em;
+  line-height: 0.5em;
+  float: left;
+  clear: both;
+  font-weight: bolder;
+  margin: 0.2em;
+  text-shadow: 2px 2px 2px #556b2f;
+}
 
 @keyframes rotate {
   from {
@@ -89,6 +113,23 @@ a:hover,
   }
 }
 section h3 {
+  border-bottom: 5px solid #228b22;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
+}
+
+.preamble p:first-of-type:first-letter {
+  color: #faedcd;
+  font-size: 3em;
+  line-height: 0.5em;
+  float: left;
+  clear: both;
+  font-weight: bolder;
+  margin: 0.2em;
+  text-shadow: 2px 2px 2px #556b2f;
+}
+
+.requirements {
   border-bottom: 5px solid #228b22;
   margin-bottom: 1.2em;
   border-radius: 10px;

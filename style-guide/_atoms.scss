@@ -78,19 +78,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-@mixin breakpoint($size) {
-  @if $size ==small {
-    @media (min-width: 30em) {
-      @content;
-    }
-  }
 
-  @else if $size ==large {
-    @media (min-width: 65em) {
-      @content;
-    }
-  }
-}
  
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
 h2,
