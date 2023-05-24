@@ -65,7 +65,6 @@ p {
   }
 
   h2 {
-    //padding-bottom: 2rem;
     width: 100%;
     color: $primary;
     font-size: 50px;
@@ -104,36 +103,33 @@ p {
   .preamble {
     position: relative;
     padding: 2%;
+    h3 {
+      padding-bottom: 1rem;
+      border: none;
+      text-align: center;
+    }
+    &::after {
+      content: "";
+      background-image: url(assets/road.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 0px 0px 15px black;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      inset: 0;
+      opacity: 20%;
+      z-index: 2;
+    }
+    & :is(p) {
+      padding: 0.25rem;
+      font-weight: 600;
+      color: black;
+      position: relative;
+      z-index: 1;
+      opacity: 100%;
+    }
   }
-
-  .preamble::after {
-    content: "";
-    background-image: url(assets/road.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0px 0px 15px black;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    inset: 0;
-    opacity: 20%;
-    z-index: 2;
-  }
-
-  .preamble :is(p) {
-    padding: 0.25rem;
-    font-weight: 600;
-    color: black;
-    position: relative;
-    z-index: 1;
-    opacity: 100%;
-  }
-
-  .preamble h3 {
-    border: none;
-    text-align: center;
-  }
-
   .main {
     display: grid;
     grid-template-columns: auto 400px;
@@ -160,33 +156,29 @@ p {
     font-weight: 600;
     padding: .5rem;
     margin: auto;
-    //margin-top: 15px;
     opacity: 100%;
     width: 350px;
     height: 350px;
-  }
-
-  .benefits::before {
-    content: "";
-    background-image: url(rsz_1420181-pdrod5-69.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    right: 0.2rem;
-    opacity: 15%;
-    z-index: 2;
-    animation: rotate 30s linear infinite;
-    line-height: 2.5em;
-    overflow: hidden;
-    border-radius: 100%;
-  }
-
-  .benefits>h3 {
-    //align-self: baseline;
-    margin-bottom: 20px;
+    h3 {
+      margin-bottom: 20px;
+    }
+    &::before {
+      content: "";
+      background-image: url(rsz_1420181-pdrod5-69.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      right: 0.2rem;
+      opacity: 15%;
+      z-index: 2;
+      animation: rotate 30s linear infinite;
+      line-height: 2.5em;
+      overflow: hidden;
+      border-radius: 100%;
+    }
   }
 
   .requirements {
@@ -194,14 +186,11 @@ p {
     grid-row: 3/4;
     column-count: 2;
     padding-bottom: 30px;
-    // border-bottom: 5px solid black;
-    
   }
 
   [role="contentinfo"] {
     font-style: italic;
   }
-
 
   footer {
     display: flex;
