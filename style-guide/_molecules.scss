@@ -19,9 +19,7 @@
     color: $text-light; //in this case the link wants to be light instead of the default dark
   }
 }
-p {
-  padding: 5px;
-}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -36,36 +34,6 @@ section h3 {
 }
 
 
-.design-selection ul,
-.design-archives ul{
-  width: 100%;
-  // height: 50%;
-  background-image: linear-gradient(69deg, transparent 80%, saturate($background-color, 10) 80%);
-  background-color: $primary;
-  padding: 1rem;
-  color: $grey-sidebar;
-  list-style-position: inside;
-  overflow: hidden;
 
-  li a:first-child::after {
-    content: ' 🌿';
-  }
 
-  li a:last-child::after {
-    content: ' 🌿';
-  }
-
-  li a {
-    color: $grey-sidebar;
-    line-height: 2;
-  }
-}
-
-abbr {
-  cursor: help;
-  color: $primary;
-}
-p {
-  padding: 5px;
-}
 

@@ -58,10 +58,6 @@ a {
   transition: border-color 0.2s ease-in-out;
 }
 
-.design-selection a {
-  border-bottom: none;
-}
-
 a:hover,
 .design-selection a:hover {
   border-bottom: 1px solid rgb(243, 243, 140);
@@ -85,10 +81,6 @@ a:hover,
   color: #fff;
 }
 
-p {
-  padding: 5px;
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -101,39 +93,6 @@ section h3 {
   border-bottom: 5px solid #228b22;
   margin-bottom: 1.2em;
   border-radius: 10px;
-}
-
-.design-selection ul,
-.design-archives ul {
-  width: 100%;
-  background-image: linear-gradient(69deg, transparent 80%, rgba(124, 183, 22, 0.6352941176) 80%);
-  background-color: #556b2f;
-  padding: 1rem;
-  color: rgb(243, 243, 140);
-  list-style-position: inside;
-  overflow: hidden;
-}
-.design-selection ul li a:first-child::after,
-.design-archives ul li a:first-child::after {
-  content: " 🌿";
-}
-.design-selection ul li a:last-child::after,
-.design-archives ul li a:last-child::after {
-  content: " 🌿";
-}
-.design-selection ul li a,
-.design-archives ul li a {
-  color: rgb(243, 243, 140);
-  line-height: 2;
-}
-
-abbr {
-  cursor: help;
-  color: #556b2f;
-}
-
-p {
-  padding: 5px;
 }
 
 .intro {
@@ -155,6 +114,10 @@ h3,
 h4 {
   font-family: "indie flower", cursive;
   margin: 0;
+}
+
+p {
+  padding: 5px;
 }
 
 @media only screen and (min-width: 65em) {
@@ -367,6 +330,34 @@ h4 {
   footer {
     grid-row: inherit;
     display: block;
+  }
+  .design-selection ul,
+  .design-archives ul {
+    width: 100%;
+    background-image: linear-gradient(69deg, transparent 80%, rgba(124, 183, 22, 0.6352941176) 80%);
+    background-color: #556b2f;
+    padding: 1rem;
+    color: rgb(243, 243, 140);
+    list-style-position: inside;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .design-selection ul li a:first-child::after,
+  .design-archives ul li a:first-child::after {
+    content: " 🌿";
+  }
+  .design-selection ul li a:last-child::after,
+  .design-archives ul li a:last-child::after {
+    content: " 🌿";
+  }
+  .design-selection ul li a,
+  .design-archives ul li a {
+    color: rgb(243, 243, 140);
+    line-height: 2;
+  }
+  abbr {
+    cursor: help;
+    color: #556b2f;
   }
 }
 

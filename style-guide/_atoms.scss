@@ -135,20 +135,12 @@ p {
   padding: 0.5em 0;
   margin: 0;
 }
-// p:first-of-type:first-letter {
-//   @include first-letter()
-// }
-
 a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: $text-dark;
   text-decoration: none;
   transition: border-color 0.2s ease-in-out;
 }
-.design-selection a {
-  border-bottom: none;
-}
-
 a:hover,
 .design-selection a:hover {
   border-bottom: 1px solid $grey-sidebar;
