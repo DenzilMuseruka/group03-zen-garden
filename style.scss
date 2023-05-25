@@ -1,0 +1,313 @@
+@use 'variables' as *; //this puts all the variables in the global namespace.
+@use 'atoms';
+@use 'molecules';
+@use 'organisms' as o;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $background-color;
+  padding: 5%;
+  margin: 0;
+}
+h2,
+h3,
+h4 {
+  font-family: $fonts-headline;
+  margin: 0;
+}
+p {
+  padding: 5px;
+}
+
+@media only screen and (min-width: 65em) {
+  body {
+    font-family: $fonts-body;
+    color: $text-dark;
+    background-color: $primary;
+    margin: 0;
+    padding: 1em;
+    width: 1200px;
+    margin: 0 auto;
+}
+  .page-wrapper {
+    background: linear-gradient(80deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+    padding: 1em;
+}
+  .intro {
+    position: relative;
+    padding: 5%;
+}
+  h1 {
+    top: 13rem;
+    left: 14rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transform: rotate(10deg);
+    border: 2px solid black;
+}
+
+  [role="banner"]::before {
+    content: "";
+    display: block;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-top: 3px solid black;
+    position: absolute;
+    top: 14rem;
+    left: 21rem;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    color: black;
+    transform: rotate(10deg);
+}
+
+  h2 {
+    width: 100%;
+    color: $primary;
+    font-size: 50px;
+    position: absolute;
+    top: 420px;
+}
+
+  header {
+    background-image: url(assets/boris-smokrovic-DPXytK8Z59Y-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    padding: 0.5rem;
+    height: 500px;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: 600px 300px;
+    text-align: left;
+    gap: 2em;
+    justify-content: space-between;
+    :first-child:not(abbr):not(a) {
+      grid-column: 1/2;
+      border-left: 2px solid $primary;
+      border-bottom: 2px solid $primary;
+}
+    :last-child:not(abbr):not(a) {
+      border-top: 2px solid $primary;
+      border-right: 2px solid $primary;
+      align-self: center;
+}
+}
+
+.preamble {
+    position: relative;
+    padding: 2%;
+    h3 {
+      padding-bottom: 1rem;
+      border: none;
+      text-align: center;
+}
+    &::after {
+      content: "";
+      background-image: url(assets/road.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 0px 0px 15px black;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      inset: 0;
+      opacity: 20%;
+      z-index: 2;
+    }
+    & :is(p) {
+      padding: 0.25rem;
+      font-weight: 600;
+      color: black;
+      position: relative;
+      z-index: 1;
+      opacity: 100%;
+    }
+  }
+  .main {
+    display: grid;
+    grid-template-columns: auto 400px;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 2em;
+    padding: 2%;
+}
+
+  .explanation {
+    grid-column: span 2;
+    grid-row: 1/2;
+}
+
+  .participation {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+  .benefits {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    padding: .5rem;
+    margin: auto;
+    opacity: 100%;
+    width: 350px;
+    height: 350px;
+    h3 {
+      margin-bottom: 20px;
+    }
+    &::before {
+      content: "";
+      background-image: url(rsz_1420181-pdrod5-69.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      right: 0.2rem;
+      opacity: 15%;
+      z-index: 2;
+      animation: rotate 30s linear infinite;
+      line-height: 2.5em;
+      overflow: hidden;
+      border-radius: 100%;
+    }
+}
+
+  .requirements {
+    grid-column: span 2;
+    grid-row: 3/4;
+    column-count: 2;
+    padding-bottom: 30px;
+  }
+
+  [role="contentinfo"] {
+    font-style: italic;
+  }
+
+  footer {
+    display: flex;
+    grid-column: 1/-1;
+    width: 100%;
+    a {
+      flex: 1 auto;
+      justify-content: space-between;
+      border-bottom: none;
+      text-align: center;
+      padding: 0.2rem;
+      @include atoms.divider
+    }
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 2em;
+  }
+
+  .design-selection ul li a {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .indicator {
+    font-size: 32px;
+  }
+  .design-archives ul {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .zen-resources {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  h3 {
+      display: none;
+  }
+    ul {
+    display: flex;
+      list-style: none;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    a {
+      text-decoration: none;
+      border-bottom: none;
+      flex: 1 auto;
+    }
+  }
+
+  .design-selection ul,
+  .design-archives ul {
+    width: 100%;
+    background-image: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
+    background-color: $primary;
+    padding: 1rem;
+    color: $grey-sidebar;
+    list-style-position: inside;
+    border-radius: 5px;
+    
+    li a:first-child::after {
+      content: ' 🌿';
+    }
+
+    li a:last-child::after {
+      content: ' 🌿';
+    }
+    li a {
+      color: $grey-sidebar;
+      line-height: 2;
+  }
+}
+
+  abbr {
+    cursor: help;
+    color: $primary;
+  }
+}
+@media only screen and (max-width: 600px) {
+
+
+
+  h3 {
+    text-decoration: underline;
+
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      align-self: end;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      text-align: center;
+    }
+  }
+
+  .preamble {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0;
+    padding: 0;
+
+    h3,
+    p {
+      margin: 20px;
+    }
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
