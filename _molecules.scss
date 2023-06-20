@@ -12,7 +12,7 @@
 }
 .summary {
   @include atoms.uppercase($text-light);
-  padding: 5% 0;
+ 
   a {
     color: $text-light; //in this case the link wants to be light instead of the default dark
   }
@@ -20,6 +20,8 @@
     @include atoms.first-letter();
   }
 }
+
+//Earth rotating 360deg infinite
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -28,13 +30,12 @@
   to {
     transform: rotate(360deg);
   }
+
 }
 section h3 {
   @include atoms.divider();
 }
-.preamble p:first-of-type:first-letter {
-  @include atoms.first-letter();
-}
+
 .requirements {
   @include atoms.divider
 } 

@@ -69,7 +69,7 @@ a:hover,
   color: #fff;
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s ease-in-out infinite;
+  animation: move-left-right 5s linear infinite;
 }
 @keyframes move-left-right {
   0% {
@@ -88,20 +88,19 @@ a:hover,
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
-  padding: 5% 0;
 }
 .summary a {
   color: #fff;
 }
 .summary p:first-of-type:first-letter {
   color: #faedcd;
-  font-size: 3em;
+  font-size: 5em;
   line-height: 0.5em;
   float: left;
   clear: both;
   font-weight: bolder;
-  margin: 0.2em;
-  text-shadow: 2px 2px 2px #556b2f;
+  margin: 0.1em 0.1em 0.2em 0;
+  text-shadow: 2px 2px 2px black;
 }
 
 @keyframes rotate {
@@ -117,24 +116,13 @@ section h3 {
   border-top-left-radius: 100%;
 }
 
-.preamble p:first-of-type:first-letter {
-  color: #faedcd;
-  font-size: 3em;
-  line-height: 0.5em;
-  float: left;
-  clear: both;
-  font-weight: bolder;
-  margin: 0.2em;
-  text-shadow: 2px 2px 2px #556b2f;
-}
-
 .requirements {
   border-bottom: 15px solid #228b22;
   border-top-left-radius: 100%;
 }
 
 .intro {
-  padding: 5%;
+  padding: 2%;
 }
 
 * {
@@ -211,6 +199,7 @@ section {
   background-color: #556b2f;
   transition: background-color ease-in-out 1s;
   transform: #556b2f;
+  text-shadow: 10px 10px 10px black;
   padding: 0.25rem;
 }
 
@@ -249,7 +238,7 @@ h2 {
 h1 {
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s ease-in-out infinite;
+  animation: move-left-right 5s linear infinite;
 }
 @keyframes move-left-right {
   0% {

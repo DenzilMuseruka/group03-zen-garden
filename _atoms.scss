@@ -25,10 +25,9 @@
   border-top-left-radius: 100%;
 }
 @mixin animated-block {
-  //border: 20px solid #333;
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s ease-in-out infinite;
+  animation: move-left-right 5s linear infinite;
 
   @keyframes move-left-right {
     0% {
@@ -58,24 +57,18 @@
   background-color: $background-color;
   transition: background-color ease-in-out 1s ;
   transform: $background-color;
+  text-shadow: 10px 10px 10px  black;
 }
 
 @mixin first-letter($color: $accent1, $font-size: 3em, $line-height: 0.5em, $float: left,  $clear: both) {
   color: $accent2;
-  font-size: $font-size;
+  font-size: 5em;
   line-height: $line-height;
   float: $float;
-  //padding-right: $padding-right;
   clear: $clear;
   font-weight: bolder;
-  margin: .20em;
-  text-shadow: 2px 2px 2px $primary;
-}
-@mixin center-items($width:90%, $max-width:100%) {
-  width: $width;
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0.1em 0.1em 0.2em 0;
+  text-shadow: 2px 2px 2px black;
 }
 
  

@@ -70,7 +70,7 @@ a:hover,
   color: #fff;
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s ease-in-out infinite;
+  animation: move-left-right 5s linear infinite;
 }
 @keyframes move-left-right {
   0% {
@@ -89,20 +89,19 @@ a:hover,
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
-  padding: 5% 0;
 }
 .summary a {
   color: #fff;
 }
 .summary p:first-of-type:first-letter {
   color: #faedcd;
-  font-size: 3em;
+  font-size: 5em;
   line-height: 0.5em;
   float: left;
   clear: both;
   font-weight: bolder;
-  margin: 0.2em;
-  text-shadow: 2px 2px 2px #556b2f;
+  margin: 0.1em 0.1em 0.2em 0;
+  text-shadow: 2px 2px 2px black;
 }
 
 @keyframes rotate {
@@ -118,24 +117,13 @@ section h3 {
   border-top-left-radius: 100%;
 }
 
-.preamble p:first-of-type:first-letter {
-  color: #faedcd;
-  font-size: 3em;
-  line-height: 0.5em;
-  float: left;
-  clear: both;
-  font-weight: bolder;
-  margin: 0.2em;
-  text-shadow: 2px 2px 2px #556b2f;
-}
-
 .requirements {
   border-bottom: 15px solid #228b22;
   border-top-left-radius: 100%;
 }
 
 .intro {
-  padding: 5%;
+  padding: 2%;
 }
 
 * {
@@ -144,8 +132,6 @@ section h3 {
 
 html {
   background-color: rgba(121, 173, 32, 0.6352941176);
-  padding: 5%;
-  margin: 0;
 }
 
 h2,
@@ -163,27 +149,27 @@ p {
   body {
     font-family: "Montserrat Alternates", sans-serif;
     color: #333;
-    background-color: #556b2f;
-    margin: 0;
-    padding: 1em;
-    width: 1200px;
     margin: 0 auto;
+    padding: 1em;
+    width: 70em;
+    z-index: 2;
   }
   .page-wrapper {
-    background: linear-gradient(80deg, #31c831, #f5dc9f, rgba(172, 223, 84, 0.6352941176));
-    padding: 1em;
+    border: 3px solid #556b2f;
   }
   .intro {
     position: relative;
-    padding: 5%;
+    background-color: #556b2f;
+    z-index: 1;
   }
   h1 {
-    top: 13rem;
-    left: 14rem;
+    top: 12rem;
+    left: 15rem;
     border: 1px solid #ccc;
     border-radius: 6px;
     transform: rotate(10deg);
     border: 2px solid black;
+    font-weight: 600;
   }
   [role=banner]::before {
     content: "";
@@ -192,54 +178,107 @@ p {
     border-top-right-radius: 100px;
     border-top: 3px solid black;
     position: absolute;
-    top: 14rem;
-    left: 21rem;
     width: 200px;
     height: 200px;
     background-color: transparent;
     color: black;
-    transform: rotate(10deg);
+    transform: translate(150%, 72%);
   }
   h2 {
-    width: 100%;
+    padding: 0.5rem;
     color: #556b2f;
     font-size: 50px;
     position: absolute;
-    top: 420px;
+    transform: translate(0.5%, 415%);
+    z-index: 3;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
   }
   header {
-    background-image: url(assets/boris-smokrovic-DPXytK8Z59Y-unsplash.jpg);
+    background-image: url(assets/bird.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    width: 100%;
     padding: 0.5rem;
-    height: 500px;
+    min-height: 500px;
+    z-index: 1;
+  }
+  section {
+    position: relative;
+  }
+  section::before {
+    content: "";
+    background-image: url(assets/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    max-width: 100%;
+    width: 65rem;
+    height: 31.2rem;
+    z-index: 1;
+    opacity: 30%;
+    box-shadow: inset 2px 2px 30px snow;
   }
   .summary {
     display: grid;
-    grid-template-columns: 600px 300px;
-    text-align: left;
-    gap: 2em;
-    justify-content: space-between;
+    padding: 0 2%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: row;
+    justify-items: start;
+  }
+  .summary abbr {
+    color: rgb(243, 243, 140);
+  }
+  .summary p {
+    padding: 3%;
+    color: rgb(243, 243, 140);
+    text-shadow: 1px 1px 1px black;
+    align-self: center;
   }
   .summary :first-child:not(abbr):not(a) {
-    grid-column: 1/2;
+    grid-column: 1/6;
+    grid-row: 1/3;
     border-left: 2px solid #556b2f;
     border-bottom: 2px solid #556b2f;
+    background-color: #556b2f;
+    width: 650px;
+    z-index: 2;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 10px;
+    border-left: 5px solid rgb(243, 243, 140);
   }
   .summary :last-child:not(abbr):not(a) {
-    border-top: 2px solid #556b2f;
-    border-right: 2px solid #556b2f;
-    align-self: center;
+    grid-column: 5/-1;
+    background-color: #718e3f;
+    grid-row: 2/3;
+    width: 300px;
+    justify-self: end;
+    border-top-left-radius: 20px;
+    min-height: 100px;
+    text-align: end;
+    margin-right: -1.2em;
+    padding: 2%;
+    line-height: 1.7em;
   }
   .preamble {
     position: relative;
-    padding: 2%;
+    padding: 3%;
+    background-color: #faedcd;
+  }
+  .preamble p {
+    width: 60ch;
+    margin-inline: auto;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: #333;
+    font-weight: 600;
   }
   .preamble h3 {
     padding-bottom: 1rem;
     border: none;
+    text-align: center;
     text-align: center;
   }
   .preamble::after {
@@ -247,74 +286,92 @@ p {
     background-image: url(assets/road.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     box-shadow: 0px 0px 15px black;
     height: 100%;
     width: 100%;
     position: absolute;
     inset: 0;
-    opacity: 20%;
-    z-index: 2;
+    opacity: 30%;
+    z-index: 1;
   }
   .preamble :is(p) {
     padding: 0.25rem;
     font-weight: 600;
     color: black;
     position: relative;
-    z-index: 1;
-    opacity: 100%;
+    z-index: 1000;
+    opacity: 1;
   }
   .main {
     display: grid;
     grid-template-columns: auto 400px;
-    grid-template-rows: auto auto auto auto auto;
-    gap: 2em;
-    padding: 2%;
+    grid-template-rows: repeat(5, auto);
+    gap: 1em;
+    background: linear-gradient(80deg, #31c831, #f5dc9f, rgba(172, 223, 84, 0.6352941176));
   }
   .explanation {
     grid-column: span 2;
     grid-row: 1/2;
+    background-color: rgba(255, 255, 255, 0.672);
+    padding: 3%;
+    margin-top: 0.5em;
+    border-left: 150px solid #556b2f;
+    border-top: 1px solid #556b2f;
+    border-right: 150px solid #556b2f;
+    border-bottom: 1px solid #556b2f;
   }
   .participation {
     grid-column: 1/2;
     grid-row: 2/3;
+    padding: 3%;
+  }
+  .participation p {
+    width: 55ch;
   }
   .benefits {
     grid-column: 2/3;
     grid-row: 2/3;
     position: relative;
-    text-align: center;
+    text-align: justify;
     font-weight: 600;
-    padding: 0.5rem;
-    margin: auto;
     opacity: 100%;
     width: 350px;
     height: 350px;
+    margin-top: 20px;
   }
   .benefits h3 {
-    margin-bottom: 20px;
+    text-align: center;
+  }
+  .benefits p {
+    line-height: 2.2em;
+    z-index: 1;
+    color: black;
+    opacity: 1;
   }
   .benefits::before {
     content: "";
-    background-image: url(rsz_1420181-pdrod5-69.jpg);
+    background-image: url(assets/earth-cropped.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     position: absolute;
+    top: 1.6rem;
     right: 0.2rem;
     opacity: 15%;
     z-index: 2;
     animation: rotate 30s linear infinite;
-    line-height: 2.5em;
-    overflow: hidden;
-    border-radius: 100%;
+    border-radius: 50%;
   }
   .requirements {
     grid-column: span 2;
     grid-row: 3/4;
     column-count: 2;
-    padding-bottom: 30px;
+    padding-bottom: 5%;
+    gap: 2rem;
+    padding: 3%;
   }
   [role=contentinfo] {
     font-style: italic;
@@ -322,26 +379,65 @@ p {
   footer {
     display: flex;
     grid-column: 1/-1;
-    width: 100%;
   }
   footer a {
     flex: 1 auto;
     justify-content: space-between;
     border-bottom: none;
     text-align: center;
-    padding: 0.2rem;
+    padding: 0.3rem;
+    transition: 0.5s ease;
     border-bottom: 15px solid #228b22;
     border-top-left-radius: 100%;
   }
   .wrapper {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 500px auto;
     grid-template-rows: auto auto;
     gap: 2em;
+    background: linear-gradient(50deg, #31c831, #f5dc9f, rgba(172, 223, 84, 0.6352941176));
+    margin: auto;
+    padding: 3%;
   }
-  .design-selection ul li a {
+  .design-selection {
+    display: grid;
     grid-column: 1/2;
     grid-row: 1/2;
+  }
+  .design-selection ul {
+    display: grid;
+    position: relative;
+    list-style: none;
+  }
+  .design-selection ul::after {
+    content: "";
+    position: absolute;
+    width: 0.05em;
+    height: 100%;
+    background-color: rgb(243, 243, 140);
+    transform: translateX(25px);
+  }
+  .design-selection ul li {
+    padding: 2% 7%;
+    position: relative;
+  }
+  .design-selection ul li::before {
+    content: "";
+    width: 0.4rem;
+    border-radius: 50px;
+    aspect-ratio: 1;
+    background-color: rgb(243, 243, 140);
+    transition: background-color 5s ease;
+    position: absolute;
+    left: 0;
+    top: 1.3em;
+    z-index: 100;
+    transform: translateX(100%);
+    outline: 0.3rem solid #7fa046;
+  }
+  .design-selection ul li:hover {
+    transform: scale(1.01);
+    transition: all 0.5s ease;
   }
   .indicator {
     font-size: 32px;
@@ -395,6 +491,7 @@ p {
   abbr {
     cursor: help;
     color: #556b2f;
+    text-decoration: none;
   }
 }
 @media only screen and (max-width: 600px) {
