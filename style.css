@@ -10,13 +10,20 @@ h4 {
 }
 
 h1 {
-  background: #228b22;
+  background-image: url('svg-image.svg');
+  background-size: 50px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-color: #228b22;
   color: #fff;
   display: inline-block;
   font-weight: normal;
   margin-bottom: 1em;
-  padding: 0.5em 1em;
+  padding: 0.5em 60px 0.5em 1em;
+  clear: right;
 }
+
+
 
 h2 {
   color: #fff;
