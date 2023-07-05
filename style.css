@@ -40,7 +40,12 @@ h3 {
   letter-spacing: 1px;
   line-height: 1em;
   padding: 0.5em 0 0 0;
+  animation: swing-by 5s infinite alternate ease-in-out -7.5s;
+  animation-fill-mode: forwards;
+  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
 }
+
+
 
 h4 {
   font-size: 1.5em;
@@ -49,6 +54,7 @@ h4 {
   line-height: 1em;
   margin: 0.5em 0;
 }
+
 
 p {
   font-family: "Montserrat Alternates", sans-serif;
@@ -93,6 +99,12 @@ a:hover,
 
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes swing-by {
+  100% {
+    transform: rotateY(-40deg) rotateX(-43deg);
   }
 }
 
@@ -517,6 +529,11 @@ p {
     list-style: none;
     width: 100%;
     justify-content: space-evenly;
+  }
+
+  .zen-resources a:hover {
+    color: #276244;
+    font-size: large;
   }
 
   .zen-resources a {

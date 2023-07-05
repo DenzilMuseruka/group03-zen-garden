@@ -20,10 +20,12 @@
   text-transform: uppercase;
   color: $color;
 }
+
 @mixin divider($color: $accent1) {
   border-bottom: 15px solid $color;
   border-top-left-radius: 100%;
 }
+
 @mixin animated-block {
   border-radius: 4px;
   position: relative;
@@ -31,17 +33,19 @@
 
   @keyframes move-left-right {
     0% {
-        transform: rotate(0deg);
+      transform: rotate(0deg);
     }
+
     50% {
       transform: rotate(7deg);
     }
-  
+
     100% {
       transform: rotate(0deg);
     }
   }
 }
+
 @mixin webkit-background() {
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -52,15 +56,15 @@
 }
 
 
-@mixin link-hover($color:#fff, $background-color: $primary) {
+@mixin link-hover($color: #fff, $background-color: $primary) {
   color: $color;
   background-color: $background-color;
-  transition: background-color ease-in-out 1s ;
+  transition: background-color ease-in-out 1s;
   transform: $background-color;
-  text-shadow: 10px 10px 10px  black;
+  text-shadow: 10px 10px 10px black;
 }
 
-@mixin first-letter($color: $accent1, $font-size: 3em, $line-height: 0.5em, $float: left,  $clear: both) {
+@mixin first-letter($color: $accent1, $font-size: 3em, $line-height: 0.5em, $float: left, $clear: both) {
   color: $accent2;
   font-size: 5em;
   line-height: $line-height;
@@ -71,7 +75,7 @@
   text-shadow: 2px 2px 2px black;
 }
 
- 
+
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
 h2,
 h3,
@@ -79,6 +83,7 @@ h4 {
   font-family: $fonts-headline;
   margin: 0;
 }
+
 h1 {
   background: $accent1;
   color: $text-light;
@@ -87,24 +92,29 @@ h1 {
   margin-bottom: 1em;
   padding: 0.5em 1em;
 }
+
 h2 {
   color: $text-light;
-  font-weight: 900; /* Heavy */
+  font-weight: 900;
+  /* Heavy */
   font-size: 6em;
   letter-spacing: 1px;
   line-height: 1em;
- 
+
 }
+
 h3 {
   font-size: 2.25em;
-  font-weight: 600; 
+  font-weight: 600;
   letter-spacing: 1px;
   line-height: 1em;
   padding: 0.5em 0 0 0;
+ 
 }
+
 h4 {
   font-size: 1.5em;
-  font-weight: 400; 
+  font-weight: 400;
   letter-spacing: 1px;
   line-height: 1em;
   margin: 0.5em 0;
@@ -115,12 +125,14 @@ p {
   padding: 0.5em 0;
   margin: 0;
 }
+
 a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: $text-dark;
   text-decoration: none;
   transition: border-color 0.2s ease-in-out;
 }
+
 a:hover,
 .design-selection a:hover {
   border-bottom: 1px solid $grey-sidebar;

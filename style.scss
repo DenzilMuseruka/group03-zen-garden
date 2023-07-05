@@ -33,12 +33,12 @@ p {
     z-index: 2;
   }
 
-//Div that envelopes the whole page
+  //Div that envelopes the whole page
   .page-wrapper {
     border: 3px solid $primary;
   }
 
-//First section-header
+  //First section-header
   .intro {
     position: relative;
     background-color: $primary;
@@ -54,6 +54,7 @@ p {
     border: 2px solid black;
     font-weight: 600;
   }
+
   //Board handle 
   [role="banner"]::before {
     content: "";
@@ -93,6 +94,7 @@ p {
   section {
     position: relative;
   }
+
   //Bird background fade img
   section::before {
     content: "";
@@ -156,10 +158,15 @@ p {
     }
   }
 
+  .zen-explanation {
+    color: red;
+  }
+
   .preamble {
     position: relative;
     padding: 3%;
     background-color: $accent2;
+
     p {
       width: 60ch;
       margin-inline: auto;
@@ -170,8 +177,11 @@ p {
       padding-bottom: 1rem;
       border: none;
       text-align: center;
-      text-align: center;
+      animation: swing-by 5s infinite alternate ease-in-out -7.5s;
+      animation-fill-mode: forwards;
+      transform: rotateY(40deg) rotateX(33deg) translateZ(0);
     }
+
     //Road img upload and positioning
     &::after {
       content: "";
@@ -222,7 +232,8 @@ p {
     grid-column: 1/2;
     grid-row: 2/3;
     padding: 3%;
-    p{
+
+    p {
       width: 55ch;
     }
   }
@@ -249,6 +260,7 @@ p {
       color: black;
       opacity: 1;
     }
+
     //Earth img upload and positioning
     &::before {
       content: "";
@@ -284,6 +296,7 @@ p {
   footer {
     display: flex;
     grid-column: 1/-1;
+
     //width: 100%;
     a {
       flex: 1 auto;
@@ -300,21 +313,26 @@ p {
     display: grid;
     grid-template-columns: 500px auto;
     grid-template-rows: auto auto;
-    gap: 2em;  
+    gap: 2em;
     background: linear-gradient(50deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
     margin: auto;
     padding: 3%;
+  }
+
+  .zen-explanation {
+    background: linear-gradient(50deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
   }
 
   .design-selection {
     display: grid;
     grid-column: 1/2;
     grid-row: 1/2;
-    
+
     ul {
       display: grid;
       position: relative;
       list-style: none;
+
       &::after {
         content: "";
         position: absolute;
@@ -327,7 +345,7 @@ p {
       li {
         padding: 2% 7%;
         position: relative;
-      
+
         &::before {
           content: "";
           width: .4rem;
@@ -392,7 +410,7 @@ p {
     color: $grey-sidebar;
     list-style-position: inside;
     border-radius: 5px;
-    
+
     li a:first-child::after {
       content: ' 🌿';
     }
@@ -400,6 +418,7 @@ p {
     li a:last-child::after {
       content: ' 🌿';
     }
+
     li a {
       color: $grey-sidebar;
       line-height: 2;
@@ -410,9 +429,16 @@ p {
     cursor: help;
     color: $primary;
     text-decoration: none;
-  
+
   }
 }
+
+@keyframes swing-by {
+  100% {
+    transform: rotateY(-40deg) rotateX(-43deg);
+  }
+}
+
 @media only screen and (max-width: 600px) {
 
 
