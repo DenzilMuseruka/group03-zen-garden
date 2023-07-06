@@ -1,12 +1,12 @@
 @use 'variables' as *;
 
 // mixins to take care of repeated patterns.
-@mixin set-font($size: 1em, $line-height: normal, $font: $fonts-body, $color: $text-dark) {
+@mixin set-font($size: 1em, $line-height: 1.8em, $font: $fonts-body, $color: black) {
   font-family: $font;
   font-size: $size;
   line-height: $line-height;
   color: $color;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @mixin set-flex($direction: row, $wrap: wrap) {
@@ -15,7 +15,7 @@
 }
 
 @mixin uppercase($color: $text-dark) {
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: $color;
@@ -56,12 +56,9 @@
 }
 
 
-@mixin link-hover($color: #fff, $background-color: $primary) {
-  color: $color;
-  background-color: $background-color;
-  transition: background-color ease-in-out 1s;
-  transform: $background-color;
-  text-shadow: 10px 10px 10px black;
+@mixin link-hover($color: $grey-sidebar) {
+  border-bottom: 1px solid $color;
+  transition: border-bottom ease-in-out .3s;
 }
 
 @mixin first-letter($color: $accent1, $font-size: 3em, $line-height: 0.5em, $float: left, $clear: both) {
@@ -109,6 +106,7 @@ h3 {
   letter-spacing: 1px;
   line-height: 1em;
   padding: 0.5em 0 0 0;
+  color: black;
  
 }
 
@@ -121,7 +119,7 @@ h4 {
 }
 
 p {
-  @include set-font(1em, 1.5em);
+  @include set-font(1em);
   padding: 0.5em 0;
   margin: 0;
 }
@@ -130,12 +128,10 @@ a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: $text-dark;
   text-decoration: none;
-  transition: border-color 0.2s ease-in-out;
 }
 
 a:hover,
 .design-selection a:hover {
-  border-bottom: 1px solid $grey-sidebar;
-
+  @include link-hover();
 }
 
