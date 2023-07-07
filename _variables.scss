@@ -23,6 +23,23 @@ $grey-sidebar: rgb(243, 243, 140);
 $text-dark: #333;
 $text-light: #fff;
 
-
 $main-bg: linear-gradient(80deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+
+$wrapper-bg: linear-gradient(50deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+
+$ul-bg: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
+
+//Url's for bg images (webp)
+$bird-bg-webp: "assets/bird-bg.webp";
+$road-bg-webp: "assets/road.webp";
+$earth-bg-webp: "assets/earth-cropped.webp";
+$flower-webp: "assets/flower.webp";
+$wood-webp: "assets/stick.webp";
+
+//Fall back img format (png)
+$bird-bg-jpg: "assets/bird-bg.jpg";
+$road-bg-jpg: "assets/road.jpg";
+$earth-bg-png: "assets/earth-cropped.png";
+$flower-png: "assets/flower.png";
+$wood-png: "assets/stick.png";
 

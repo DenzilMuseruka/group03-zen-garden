@@ -138,7 +138,7 @@ html {
     color: #333;
     margin: 0 auto;
     padding: 1em;
-    width: 70em;
+    width: min(70em, 100%);
     z-index: 2;
   }
   .page-wrapper {
@@ -150,7 +150,7 @@ html {
     padding: 2%;
   }
   h1 {
-    top: 12rem;
+    top: 11rem;
     left: 15rem;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -172,7 +172,7 @@ html {
     width: 200px;
     height: 200px;
     color: #333;
-    transform: translate(150%, 72%);
+    transform: translate(150%, 60%);
   }
   h2 {
     padding: 0.5rem;
@@ -184,15 +184,17 @@ html {
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
   }
   header {
-    background-image: url(assets/bird-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    padding: 0.5rem;
+    padding: 1rem;
     min-height: 500px;
-    z-index: 1;
-    box-shadow: 0 0 5px rgb(243, 243, 140);
     filter: contrast(125%);
+    background-image: url("assets/bird-bg.webp"), url("assets/bird-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: static;
+    z-index: 1;
+    opacity: 1;
+    width: 65em;
   }
   section {
     position: relative;
@@ -266,16 +268,16 @@ html {
   }
   .preamble::after {
     content: "";
-    background-image: url(assets/road.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     box-shadow: 0px 0px 15px black;
     width: 100%;
-    position: absolute;
     inset: 0;
-    opacity: 0.3;
+    background-image: url("assets/road.webp"), url("assets/road.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
     z-index: 1;
+    opacity: 0.3;
   }
   .preamble :is(p) {
     padding: 0.25rem;
@@ -351,19 +353,19 @@ html {
   }
   .benefits::before {
     content: "";
-    background-image: url(assets/earth-cropped.png);
-    background-repeat: no-repeat;
+    background-image: url("assets/earth-cropped.webp"), url("assets/earth-cropped.png");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.15;
     min-height: 100%;
     width: 100%;
-    position: absolute;
     top: 1.7rem;
     right: 0.2rem;
-    opacity: 0.15;
-    z-index: 2;
-    animation: rotate 30s linear infinite;
     border-radius: 50%;
+    animation: rotate 30s linear infinite;
   }
   .benefits p::after {
     content: "";
@@ -406,9 +408,6 @@ html {
     background: linear-gradient(50deg, #31c831, #f5dc9f, rgba(172, 223, 84, 0.6352941176));
     margin: auto;
     padding: 3%;
-  }
-  .zen-explanation {
-    background: linear-gradient(50deg, #31c831, #f5dc9f, rgba(172, 223, 84, 0.6352941176));
   }
   .design-selection {
     display: grid;

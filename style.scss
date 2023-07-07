@@ -20,7 +20,7 @@ html {
     color: $text-dark;
     margin: 0 auto;
     padding: 1em;
-    width: 70em;
+    width: min(70em, 100%);
     z-index: 2;
   }
 
@@ -40,7 +40,7 @@ html {
   $svgImagePath: "./svg-image.svg";
 
   h1 {
-    top: 12rem;
+    top: 11rem;
     left: 15rem;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -66,7 +66,7 @@ html {
     width: 200px;
     height: 200px;
     color: $text-dark;
-    transform: translate(150%, 72%);
+    transform: translate(150%, 60%);
   }
 
   h2 {
@@ -82,15 +82,11 @@ html {
 
   // Bird img upload and positioning
   header {
-    background-image: url(assets/bird-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    padding: .5rem;
+    padding: 1rem;
     min-height: 500px;
-    z-index: 1;
-    box-shadow: 0 0 5px $grey-sidebar;
     filter: contrast(125%);
+    @include atoms.bg-images($bird-bg-webp, $bird-bg-jpg, static, 1, 1);
+    width: 65em;
   }
 
   section {
@@ -171,16 +167,10 @@ html {
     //Road img upload and positioning
     &::after {
       content: "";
-      background-image: url(assets/road.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
       box-shadow: 0px 0px 15px black;
       width: 100%;
-      position: absolute;
       inset: 0;
-      opacity: 0.3;
-      z-index: 1;
+      @include atoms.bg-images($road-bg-webp, $road-bg-jpg, absolute, 1, 0.3)
     }
 
     & :is(p) {
@@ -261,25 +251,18 @@ html {
       @include atoms.set-font(1em, 2.2em);
       z-index: 4;
       opacity: 1;
-
     }
 
     //Earth img upload and positioning
     &::before {
       content: "";
-      background-image: url(assets/earth-cropped.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      @include atoms.bg-images($earth-bg-webp, $earth-bg-png, absolute, 2, 0.15);
       min-height: 100%;
       width: 100%;
-      position: absolute;
       top: 1.7rem;
       right: 0.2rem;
-      opacity: 0.15;
-      z-index: 2;
-      animation: rotate 30s linear infinite;
       border-radius: 50%;
+      animation: rotate 30s linear infinite;
     }
 
     p::after {
@@ -325,13 +308,9 @@ html {
     grid-template-columns: 500px auto;
     grid-template-rows: auto auto;
     gap: 2em;
-    background: linear-gradient(50deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+    background: $wrapper-bg;
     margin: auto;
     padding: 3%;
-  }
-
-  .zen-explanation {
-    background: linear-gradient(50deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
   }
 
   .design-selection {
@@ -349,7 +328,7 @@ html {
       position: relative;
       list-style: none;
       width: 100%;
-      background-image: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
+      background-image: $ul-bg;
       background-color: $primary;
       padding: 1rem;
       color: $grey-sidebar;
@@ -401,9 +380,7 @@ html {
           transition: all .5s ease;
         }
       }
-
     }
-
   }
 
   .indicator {
@@ -415,7 +392,6 @@ html {
     grid-row: 1/2;
     position: relative;
     justify-self: center;
-
 
     h3 {
       text-align: center;
@@ -438,7 +414,6 @@ html {
       line-height: 3.5em;
       transition: 0.3s ease;
       cursor: pointer;
-
     }
 
     a {

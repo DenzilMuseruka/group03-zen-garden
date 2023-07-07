@@ -73,6 +73,16 @@
 }
 
 
+@mixin bg-images($bg-img1, $bg-img2, $elem-position, $z-index, $opacity) {
+  background-image: url($bg-img1), url($bg-img2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: $elem-position;
+  z-index: $z-index;
+  opacity: $opacity;
+}
+
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
 h2,
 h3,
