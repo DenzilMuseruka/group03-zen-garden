@@ -13,17 +13,6 @@ html {
   background-color: $background-color;
 }
 
-// h2,
-// h3,
-// h4 {
-//   font-family: $fonts-headline;
-//   margin: 0;
-// }
-
-// p {
-//   padding: 5px;
-// }
-
 @media only screen and (min-width: 65em) {
 
   body {
@@ -67,25 +56,17 @@ html {
     background-blend-mode: color-burn;
   }
 
-
-
   //Board handle 
   [role="banner"]::before {
     content: "";
     display: block;
-    // border-top-left-radius: 100px;
-    // border-top-right-radius: 100px;
     border-top: 3px solid $text-dark;
     position: absolute;
-    border-radius: 100px 100px;
+    border-radius: 100px;
     width: 200px;
     height: 200px;
-    //background-color: transparent;
     color: $text-dark;
     transform: translate(150%, 72%);
-
-
-
   }
 
   h2 {
@@ -99,7 +80,6 @@ html {
   }
 
 
-
   // Bird img upload and positioning
   header {
     background-image: url(assets/bird-bg.jpg);
@@ -111,13 +91,11 @@ html {
     z-index: 1;
     box-shadow: 0 0 5px $grey-sidebar;
     filter: contrast(125%);
-
   }
 
   section {
     position: relative;
   }
-
 
   .summary {
     display: grid;
@@ -141,12 +119,11 @@ html {
     :first-child:not(abbr):not(a) {
       grid-column: 1/6;
       grid-row: 1/3;
-      border-left: 2px solid $primary;
-      border-bottom: 2px solid $primary;
       background-color: $primary;
       width: 650px;
       z-index: 2;
       border-top-right-radius: 30px;
+      border-bottom: 2px solid $primary;
       border-bottom-right-radius: 10px;
       border-left: 5px solid $grey-sidebar;
     }
@@ -199,11 +176,10 @@ html {
       background-size: cover;
       background-position: center;
       box-shadow: 0px 0px 15px black;
-      //height: 100%;
       width: 100%;
       position: absolute;
       inset: 0;
-      opacity: 30%;
+      opacity: 0.3;
       z-index: 1;
     }
 
@@ -228,7 +204,6 @@ html {
   .explanation {
     grid-column: span 2;
     grid-row: 1/2;
-    background-color: $text-light;
     background-color: $accent2;
     padding: 1%;
     border: 10px solid $primary;
@@ -240,7 +215,7 @@ html {
     }
 
     h3 {
-      background-color: #556b2f;
+      background-color: $primary;
       color: $accent2;
       text-align: center;
       border-bottom: 1px solid $accent2;
@@ -248,7 +223,7 @@ html {
 
     p {
       padding: 3% 5%;
-      background-color: #556b2f;
+      background-color: $primary;
       color: $accent2;
       font-weight: 400;
     }
@@ -270,8 +245,7 @@ html {
     position: relative;
     text-align: justify;
     font-weight: 600;
-    //gap: 2em;
-    opacity: 100%;
+    opacity: 1;
     width: 350px;
     height: 350px;
     margin-top: 20px;
@@ -285,9 +259,7 @@ html {
 
     p {
       @include atoms.set-font(1em, 2.2em);
-      //line-height: 2.2em;
-      z-index: 1;
-      color: black;
+      z-index: 4;
       opacity: 1;
 
     }
@@ -304,7 +276,7 @@ html {
       position: absolute;
       top: 1.7rem;
       right: 0.2rem;
-      opacity: 15%;
+      opacity: 0.15;
       z-index: 2;
       animation: rotate 30s linear infinite;
       border-radius: 50%;
@@ -312,7 +284,6 @@ html {
 
     p::after {
       content: "";
-      //border-top: 1px solid red;
       width: 100%;
       height: 1px;
       background-color: $primary;
@@ -339,11 +310,9 @@ html {
     display: flex;
     grid-column: 1/-1;
 
-    //width: 100%;
     a {
       flex: 1 auto;
       justify-content: space-between;
-      border-bottom: none;
       text-align: center;
       padding: 0.3rem;
       transition: .5s ease;
@@ -373,7 +342,6 @@ html {
     .select {
       display: block;
       text-align: center;
-
     }
 
     ul {
@@ -382,10 +350,9 @@ html {
       list-style: none;
       width: 100%;
       background-image: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
-      // background-color: $primary;
+      background-color: $primary;
       padding: 1rem;
       color: $grey-sidebar;
-      //list-style-position: inside;
       border-radius: 5px;
 
       &::after {
@@ -452,7 +419,6 @@ html {
 
     h3 {
       text-align: center;
-      //padding: 2rem 0.8rem;
       border-bottom: none;
     }
 
@@ -469,11 +435,9 @@ html {
       font-size: 20px;
       border-radius: 0.5em;
       margin: 0.8em;
-      //color: white;
       line-height: 3.5em;
       transition: 0.3s ease;
       cursor: pointer;
-
 
     }
 
@@ -521,8 +485,6 @@ html {
       transform: perspective(250px) rotateY(-45deg);
       padding-right: 5%;
     }
-
-
   }
 
   .zen-resources {
@@ -548,28 +510,6 @@ html {
     }
   }
 
-  .design-selection ul {
-    width: 100%;
-    background-image: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
-    background-color: $primary;
-    padding: 1rem;
-    color: $grey-sidebar;
-    list-style-position: inside;
-    border-radius: 5px;
-
-    li a:first-child::after {
-      content: ' 🌿';
-    }
-
-    li a:last-child::after {
-      content: ' 🌿';
-    }
-
-    li a {
-      color: $grey-sidebar;
-      line-height: 2;
-    }
-  }
 
   abbr {
     cursor: help;
