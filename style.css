@@ -312,7 +312,7 @@ html {
     background-color: #faedcd;
     padding: 1%;
     border: 10px solid #556b2f;
-    border-width: 50px 150px 20px 150px;
+    border-width: 50px 150px 20px;
     font-size: 17.6px;
   }
   .explanation abbr {
