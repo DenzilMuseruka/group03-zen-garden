@@ -185,7 +185,7 @@ html {
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
   }
   header {
-    background-image: url(assets/bird.jpg);
+    background-image: url(assets/bird-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -193,22 +193,10 @@ html {
     min-height: 500px;
     z-index: 1;
     box-shadow: 0 0 5px rgb(243, 243, 140);
+    filter: contrast(125%);
   }
   section {
     position: relative;
-  }
-  section::before {
-    content: "";
-    background-image: url(assets/back.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    max-width: 100%;
-    width: 65rem;
-    height: 31.2rem;
-    z-index: 1;
-    opacity: 30%;
   }
   .summary {
     display: grid;
@@ -352,6 +340,7 @@ html {
   }
   .benefits h3 {
     text-align: center;
+    padding: 2%;
     border-bottom: 1px solid #556b2f;
   }
   .benefits p {
@@ -373,7 +362,7 @@ html {
     min-height: 100%;
     width: 100%;
     position: absolute;
-    top: 1.6rem;
+    top: 1.7rem;
     right: 0.2rem;
     opacity: 15%;
     z-index: 2;

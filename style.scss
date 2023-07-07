@@ -100,7 +100,7 @@ html {
 
   // Bird img upload and positioning
   header {
-    background-image: url(assets/bird.jpg);
+    background-image: url(assets/bird-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -108,12 +108,14 @@ html {
     min-height: 500px;
     z-index: 1;
     box-shadow: 0 0 5px $grey-sidebar;
+    filter: contrast(125%);
 
   }
 
   section {
     position: relative;
   }
+
 
   //Bird background fade img
   section::before {
@@ -129,6 +131,7 @@ html {
     z-index: 1;
     opacity: 30%;
   }
+
 
   .summary {
     display: grid;
@@ -190,7 +193,7 @@ html {
     p {
       width: 55ch;
       margin-inline: auto;
-      @include atoms.set-font(1.1em)
+      @include atoms.set-font(1.1em);
     }
 
     h3 {
@@ -293,6 +296,7 @@ html {
 
     h3 {
       text-align: center;
+      padding: 2%;
       border-bottom: 1px solid $primary;
     }
 
@@ -315,7 +319,7 @@ html {
       min-height: 100%;
       width: 100%;
       position: absolute;
-      top: 1.6rem;
+      top: 1.7rem;
       right: 0.2rem;
       opacity: 15%;
       z-index: 2;
