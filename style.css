@@ -198,6 +198,19 @@ html {
   section {
     position: relative;
   }
+  section::before {
+    content: "";
+    background-image: url(assets/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    max-width: 100%;
+    width: 65rem;
+    height: 31.2rem;
+    z-index: 1;
+    opacity: 30%;
+  }
   .summary {
     display: grid;
     padding: 2% 2% 0;
