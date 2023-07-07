@@ -46,14 +46,26 @@ html {
     padding: 2%;
   }
 
+  $svgImagePath: "./svg-image.svg";
+
   h1 {
     top: 12rem;
     left: 15rem;
     border: 1px solid #ccc;
     border-radius: 6px;
     transform: rotate(10deg);
-    border: 2px solid $text-dark;    
+    border: 2px solid $text-dark;
+    padding: 1em;
+
+    background-image: url(#{$svgImagePath});
+    background-size: 1.5em;
+    background-origin: padding-box;
+    background-repeat: repeat;
+    background-position: bottom 45px;
+    background-blend-mode: color;
   }
+
+
 
   //Board handle 
   [role="banner"]::before {
@@ -69,6 +81,9 @@ html {
     //background-color: transparent;
     color: $text-dark;
     transform: translate(150%, 72%);
+
+
+
   }
 
   h2 {
@@ -81,6 +96,8 @@ html {
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
   }
 
+
+
   // Bird img upload and positioning
   header {
     background-image: url(assets/bird-bg.jpg);
@@ -92,11 +109,29 @@ html {
     z-index: 1;
     box-shadow: 0 0 5px $grey-sidebar;
     filter: contrast(125%);
+
   }
 
   section {
     position: relative;
   }
+
+
+  //Bird background fade img
+  section::before {
+    content: "";
+    background-image: url(assets/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    max-width: 100%;
+    width: 65rem;
+    height: 31.2rem;
+    z-index: 1;
+    opacity: 30%;
+  }
+
 
   .summary {
     display: grid;
@@ -143,6 +178,7 @@ html {
       padding: 2%;
       line-height: 1.7em;
     }
+
     a {
       color: black;
       text-shadow: 0 0 5px $grey-sidebar;
@@ -215,24 +251,24 @@ html {
     border: 10px solid $primary;
     border-width: 50px 150px 20px 150px;
     font-size: 17.6px;
-    
+
     abbr {
-        color: $accent2;
-      }
-    
-      h3 {
-        background-color: #556b2f;
-        color: $accent2;
-        text-align: center;
-        border-bottom: 1px solid $accent2;
-      }
-    
-      p {
-        padding: 3% 5%;
-        background-color: #556b2f;
-        color: $accent2;
-        font-weight: 400;
-      }
+      color: $accent2;
+    }
+
+    h3 {
+      background-color: #556b2f;
+      color: $accent2;
+      text-align: center;
+      border-bottom: 1px solid $accent2;
+    }
+
+    p {
+      padding: 3% 5%;
+      background-color: #556b2f;
+      color: $accent2;
+      font-weight: 400;
+    }
   }
 
   .participation {
@@ -270,7 +306,7 @@ html {
       z-index: 1;
       color: black;
       opacity: 1;
-      
+
     }
 
     //Earth img upload and positioning
@@ -290,6 +326,7 @@ html {
       animation: rotate 30s linear infinite;
       border-radius: 50%;
     }
+
     p::after {
       content: "";
       //border-top: 1px solid red;
@@ -353,9 +390,9 @@ html {
     .select {
       display: block;
       text-align: center;
-     
+
     }
-  
+
     ul {
       display: grid;
       position: relative;
@@ -367,7 +404,7 @@ html {
       color: $grey-sidebar;
       //list-style-position: inside;
       border-radius: 5px;
-  
+
       &::after {
         content: "";
         position: absolute;
@@ -376,11 +413,11 @@ html {
         background-color: $grey-sidebar;
         transform: translateX(25px);
       }
-  
+
       li {
         padding: 2% 7%;
         position: relative;
-  
+
         &::before {
           content: "";
           width: .4rem;
@@ -395,28 +432,28 @@ html {
           transform: translateX(100%);
           outline: 0.3rem solid lighten($primary, 15);
         }
-  
+
         a:first-child::after {
           content: ' 🌿';
         }
-  
+
         a:last-child::after {
           content: ' 🌿';
         }
-  
+
         a {
           color: $grey-sidebar;
           line-height: 2;
         }
-  
+
         &:hover {
           transform: scale(1.01);
           transition: all .5s ease;
         }
       }
-  
+
     }
-  
+
   }
 
   .indicator {
@@ -428,20 +465,20 @@ html {
     grid-row: 1/2;
     position: relative;
     justify-self: center;
-     
-  
+
+
     h3 {
       text-align: center;
       //padding: 2rem 0.8rem;
       border-bottom: none;
-    }  
-  
+    }
+
     ul {
       list-style-type: none;
       position: relative;
       z-index: 2;
     }
-  
+
     li {
       box-sizing: border-box;
       width: 15em;
@@ -453,20 +490,20 @@ html {
       line-height: 3.5em;
       transition: 0.3s ease;
       cursor: pointer;
-      
-      
+
+
     }
-  
+
     a {
       color: $grey-sidebar;
     }
-  
+
     li:nth-child(odd) {
       background: linear-gradient(to right, $primary, lighten($accent1, 5));
       text-align: left;
       padding-left: 5%;
       transform: perspective(500px) rotateY(45deg);
-  
+
       &::after {
         content: "<";
         position: absolute;
@@ -475,14 +512,14 @@ html {
         left: 70%;
       }
     }
-  
+
     li:nth-child(even) {
       background: linear-gradient(to left, $primary,
           lighten($accent1, 5));
       text-align: right;
       padding-right: 5%;
       transform: perspective(500px) rotateY(-45deg);
-  
+
       &::after {
         content: ">";
         position: absolute;
@@ -491,18 +528,18 @@ html {
         left: 10%;
       }
     }
-  
+
     li:nth-child(odd):hover {
       transform: perspective(250px) rotateY(45deg);
       padding-left: 5%;
     }
-  
+
     li:nth-child(even):hover {
       transform: perspective(250px) rotateY(-45deg);
       padding-right: 5%;
     }
-  
-    
+
+
   }
 
   .zen-resources {
@@ -528,8 +565,7 @@ html {
     }
   }
 
-  .design-selection ul
-   {
+  .design-selection ul {
     width: 100%;
     background-image: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
     background-color: $primary;
