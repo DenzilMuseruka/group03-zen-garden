@@ -21,3 +21,7 @@ $accent2: #faedcd;
 $grey-sidebar: rgb(243, 243, 140);
 $text-dark: #333;
 $text-light: #fff;
+
+
+$main-bg: linear-gradient(80deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+

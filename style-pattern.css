@@ -18,7 +18,8 @@ h1 {
 
 h2 {
   color: #fff;
-  font-weight: 900; /* Heavy */
+  font-weight: 900;
+  /* Heavy */
   font-size: 6em;
   letter-spacing: 1px;
   line-height: 1em;
@@ -30,6 +31,7 @@ h3 {
   letter-spacing: 1px;
   line-height: 1em;
   padding: 0.5em 0 0 0;
+  color: black;
 }
 
 h4 {
@@ -43,9 +45,9 @@ h4 {
 p {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 1em;
-  line-height: 1.5em;
-  color: #333;
-  font-weight: 600;
+  line-height: 1.8em;
+  color: black;
+  font-weight: 700;
   padding: 0.5em 0;
   margin: 0;
 }
@@ -54,16 +56,16 @@ a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: #333;
   text-decoration: none;
-  transition: border-color 0.2s ease-in-out;
 }
 
 a:hover,
 .design-selection a:hover {
   border-bottom: 1px solid rgb(243, 243, 140);
+  transition: border-bottom ease-in-out 0.3s;
 }
 
 [role=banner] > h1 {
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
@@ -84,13 +86,13 @@ a:hover,
 }
 
 .summary {
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
 }
 .summary a {
-  color: #fff;
+  color: rgb(243, 243, 140);
 }
 .summary p:first-of-type:first-letter {
   color: #faedcd;
@@ -119,10 +121,6 @@ section h3 {
 .requirements {
   border-bottom: 15px solid #228b22;
   border-top-left-radius: 100%;
-}
-
-.intro {
-  padding: 2%;
 }
 
 * {
@@ -195,23 +193,20 @@ section {
 }
 
 .element a:hover {
-  color: #fff;
-  background-color: #556b2f;
-  transition: background-color ease-in-out 1s;
-  transform: #556b2f;
-  text-shadow: 10px 10px 10px black;
+  border-bottom: 1px solid rgb(243, 243, 140);
+  transition: border-bottom ease-in-out 0.3s;
   padding: 0.25rem;
 }
 
 .uppercase {
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #333;
 }
 
 .uppercase-light {
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;

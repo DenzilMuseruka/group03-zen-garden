@@ -14,7 +14,7 @@
   @include atoms.uppercase($text-light);
  
   a {
-    color: $text-light; //in this case the link wants to be light instead of the default dark
+    color: $grey-sidebar; //in this case the link wants to be light instead of the default dark
   }
   p:first-of-type:first-letter {
     @include atoms.first-letter();
