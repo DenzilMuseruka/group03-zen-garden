@@ -156,6 +156,13 @@ html {
     border-radius: 6px;
     transform: rotate(10deg);
     border: 2px solid #333;
+    padding: 1em;
+    background-image: url(./svg-image.svg);
+    background-size: 1.5em;
+    background-origin: padding-box;
+    background-repeat: repeat;
+    background-position: bottom 45px;
+    background-blend-mode: color;
   }
   [role=banner]::before {
     content: "";
@@ -604,18 +611,10 @@ html {
   header h1 {
     align-self: end;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> f8d47a1f1a6891bd38832c6995776d023396fbf1
   header h2 {
     font-size: 2.5em;
     text-align: center;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> f8d47a1f1a6891bd38832c6995776d023396fbf1
   .preamble {
     display: flex;
     flex-direction: column;
