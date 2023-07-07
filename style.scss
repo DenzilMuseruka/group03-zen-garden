@@ -157,7 +157,7 @@ html {
     p {
       width: 55ch;
       margin-inline: auto;
-      @include atoms.set-font(1.1em)
+      @include atoms.set-font(1.1em);
     }
 
     h3 {
