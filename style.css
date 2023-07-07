@@ -10,20 +10,13 @@ h4 {
 }
 
 h1 {
-  background-image: url('svg-image.svg');
-  background-size: 50px;
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-color: #228b22;
+  background: #228b22;
   color: #fff;
   display: inline-block;
   font-weight: normal;
   margin-bottom: 1em;
-  padding: 0.5em 60px 0.5em 1em;
-  clear: right;
+  padding: 0.5em 1em;
 }
-
-
 
 h2 {
   color: #fff;
@@ -573,23 +566,10 @@ p {
     align-self: end;
   }
 
-  h2 {
-    display: inline-block;
-    animation: up-and-down 2s ease-in-out infinite;
+  header h2 {
+    font-size: 2.5em;
+    text-align: center;
   }
-
-  @keyframes up-and-down {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
 
   .preamble {
     display: flex;
