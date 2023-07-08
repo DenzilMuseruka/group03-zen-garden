@@ -235,10 +235,13 @@ html {
     text-align: justify;
     font-weight: 600;
     opacity: 1;
-    width: 350px;
-    height: 350px;
-    margin-top: 20px;
+    width: 360px;
+    height: 420px;
+    //margin-top: 20px;
     align-self: center;
+    background-color: $accent2;
+    padding: 5%;
+    box-shadow: 0 0 10px $text-dark;
 
     h3 {
       text-align: center;
@@ -256,23 +259,23 @@ html {
     &::before {
       content: "";
       @include atoms.bg-images($earth-bg-webp, $earth-bg-png, absolute, 2, 0.15);
-      min-height: 100%;
+      height: 350px;
       width: 100%;
-      top: 1.7rem;
+      top: 4.5rem;
       right: 0.2rem;
       border-radius: 50%;
       animation: rotate 30s linear infinite;
     }
 
-    p::after {
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: $primary;
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-    }
+    // p::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 1px;
+    //   background-color: $primary;
+    //   position: absolute;
+    //   bottom: 10px;
+    //   left: 0;
+    // }
   }
 
   .requirements {
