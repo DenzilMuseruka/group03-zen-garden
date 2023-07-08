@@ -481,11 +481,14 @@ html {
   .design-archives h3 {
     text-align: center;
     border-bottom: none;
+    padding: 0.6em 0 0;
   }
   .design-archives ul {
     list-style-type: none;
     position: relative;
     z-index: 2;
+    align-self: center;
+    justify-items: end;
   }
   .design-archives li {
     box-sizing: border-box;
@@ -498,11 +501,9 @@ html {
     transition: 0.3s ease;
     cursor: pointer;
   }
-  .design-archives a {
-    color: rgb(243, 243, 140);
-  }
   .design-archives li:nth-child(odd) {
     background: linear-gradient(to right, #556b2f, #279f27);
+    margin-top: 2em;
     text-align: left;
     padding-left: 5%;
     transform: perspective(500px) rotateY(45deg);
@@ -518,6 +519,7 @@ html {
     background: linear-gradient(to left, #556b2f, #279f27);
     text-align: right;
     padding-right: 5%;
+    margin-top: 2em;
     transform: perspective(500px) rotateY(-45deg);
   }
   .design-archives li:nth-child(even)::after {
@@ -527,6 +529,9 @@ html {
     color: rgb(243, 243, 140);
     left: 10%;
   }
+  .design-archives a {
+    color: rgb(243, 243, 140);
+  }
   .design-archives li:nth-child(odd):hover {
     transform: perspective(250px) rotateY(45deg);
     padding-left: 5%;
@@ -534,6 +539,21 @@ html {
   .design-archives li:nth-child(even):hover {
     transform: perspective(250px) rotateY(-45deg);
     padding-right: 5%;
+  }
+  .design-archives::after {
+    content: "";
+    width: 15%;
+    height: 460px;
+    background-size: contain;
+    right: 10em;
+    transform: translateY(-13.5em);
+    background-image: url("assets/stick.webp"), url("assets/stick.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    z-index: 0;
+    opacity: 1;
   }
   .zen-resources {
     display: flex;
