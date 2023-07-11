@@ -394,7 +394,7 @@ html {
     grid-row: 1/2;
     position: relative;
     justify-self: center;
-    
+
 
     h3 {
       text-align: center;
@@ -408,8 +408,8 @@ html {
       z-index: 2;
       align-self: center;
       justify-items: end;
-      
-      
+
+
     }
 
     li {
@@ -422,7 +422,7 @@ html {
       line-height: 3.5em;
       transition: 0.3s ease;
       cursor: pointer;
-     // margin-top: 3em;
+      // margin-top: 3em;
 
       &:nth-child(odd) {
         background: linear-gradient(to right, $primary, lighten($accent1, 5));
@@ -440,6 +440,7 @@ html {
         }
       }
     }
+
     li:nth-child(even) {
       background: linear-gradient(to left, $primary,
           lighten($accent1, 5));
@@ -456,6 +457,7 @@ html {
         left: 10%;
       }
     }
+
     a {
       color: $grey-sidebar;
     }
@@ -469,8 +471,9 @@ html {
       transform: perspective(250px) rotateY(-45deg);
       padding-right: 5%;
     }
-    
+
   }
+
   .design-archives::after {
     content: "";
     width: 15%;
@@ -479,9 +482,9 @@ html {
     right: 10em;
     transform: translateY(-13.5em);
     @include atoms.bg-images($wood-webp, $wood-png, absolute, 0, 1);
-    
+
   }
-  
+
   .zen-resources {
     display: flex;
     grid-column: 1/-1;
@@ -522,11 +525,8 @@ html {
 
 @media only screen and (max-width: 600px) {
 
-
-
   h3 {
     text-decoration: underline;
-
   }
 
   header {
@@ -555,6 +555,21 @@ html {
       margin: 20px;
     }
   }
+
+  /* Keyframe animation */
+  @keyframes swing-by {
+    100% {
+      transform: rotateY(-40deg) rotateX(-43deg);
+    }
+  }
+
+  /* Apply animation to an element */
+  h3 {
+    animation: swing-by 5s infinite alternate ease-in-out -7.5s;
+    animation-fill-mode: forwards;
+    transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+  }
 }
+
 
 /*# sourceMappingURL=style.css.map */

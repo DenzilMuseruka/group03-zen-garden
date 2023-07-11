@@ -604,6 +604,18 @@ html {
   .preamble p {
     margin: 20px;
   }
+  /* Keyframe animation */
+  @keyframes swing-by {
+    100% {
+      transform: rotateY(-40deg) rotateX(-43deg);
+    }
+  }
+  /* Apply animation to an element */
+  h3 {
+    animation: swing-by 5s infinite alternate ease-in-out -7.5s;
+    animation-fill-mode: forwards;
+    transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+  }
 }
 
 
