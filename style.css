@@ -601,6 +601,10 @@ html {
   .preamble p {
     margin: 20px;
   }
+  li a:hover {
+    color: gray;
+    transition: color 5s ease-in;
+  }
   /* Keyframe animation */
   @keyframes swing-by {
     100% {
