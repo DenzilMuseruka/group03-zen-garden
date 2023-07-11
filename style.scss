@@ -40,14 +40,13 @@ html {
   $svgImagePath: "./svg-image.svg";
 
   h1 {
-    top: 11rem;
-    left: 15rem;
+    top: 7em;
+    left: 10.5em;
     border: 1px solid #ccc;
     border-radius: 6px;
-    transform: rotate(10deg);
     border: 2px solid $text-dark;
     padding: 1em;
-
+    text-shadow: 1px 1px 1px black;
 
     background-image: url(#{$svgImagePath});
     background-size: 1.5em;
@@ -60,13 +59,13 @@ html {
   [role="banner"]::before {
     content: "";
     display: block;
-    border-top: 3px solid $text-dark;
+    border-top: 3px solid rgb(99, 99, 99);
     position: absolute;
     border-radius: 100px;
     width: 200px;
     height: 200px;
     color: $text-dark;
-    transform: translate(150%, 60%);
+    transform: translate(150%, 57%);
   }
 
   h2 {
@@ -76,7 +75,7 @@ html {
     position: absolute;
     transform: translate(0.5%, 415%);
     z-index: 3;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
+    text-shadow: 2px 2px 0px $text-dark;
   }
 
 
@@ -118,9 +117,6 @@ html {
       background-color: $primary;
       width: 650px;
       z-index: 2;
-      border-top-right-radius: 30px;
-      border-bottom: 2px solid $primary;
-      border-bottom-right-radius: 10px;
       border-left: 5px solid $grey-sidebar;
     }
 
@@ -196,7 +192,7 @@ html {
     background-color: $accent2;
     padding: 1%;
     border: 10px solid $primary;
-    border-width: 50px 150px 20px;
+    border-width: 40px 150px 30px;
     font-size: 17.6px;
 
     abbr {
@@ -211,7 +207,7 @@ html {
     }
 
     p {
-      padding: 3% 5%;
+      padding: 2% 5%;
       background-color: $primary;
       color: $accent2;
       font-weight: 400;
@@ -237,7 +233,6 @@ html {
     opacity: 1;
     width: 360px;
     height: 420px;
-    //margin-top: 20px;
     align-self: center;
     background-color: $accent2;
     padding: 5%;
@@ -267,15 +262,6 @@ html {
       animation: rotate 30s linear infinite;
     }
 
-    // p::after {
-    //   content: "";
-    //   width: 100%;
-    //   height: 1px;
-    //   background-color: $primary;
-    //   position: absolute;
-    //   bottom: 10px;
-    //   left: 0;
-    // }
   }
 
   .requirements {
@@ -395,7 +381,6 @@ html {
     position: relative;
     justify-self: center;
 
-
     h3 {
       text-align: center;
       border-bottom: none;
@@ -482,7 +467,6 @@ html {
     right: 10em;
     transform: translateY(-13.5em);
     @include atoms.bg-images($wood-webp, $wood-png, absolute, 0, 1);
-
   }
 
   .zen-resources {
@@ -508,12 +492,10 @@ html {
     }
   }
 
-
   abbr {
     cursor: help;
     color: $primary;
     text-decoration: none;
-
   }
 }
 

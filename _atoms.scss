@@ -29,7 +29,7 @@
 @mixin animated-block {
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s linear infinite;
+  animation: move-left-right 3s linear infinite;
 
   @keyframes move-left-right {
     0% {
