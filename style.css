@@ -181,7 +181,7 @@ html {
     position: absolute;
     transform: translate(0.5%, 415%);
     z-index: 3;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
+    text-shadow: 2px 2px 0px #333;
   }
   header {
     padding: 1rem;
