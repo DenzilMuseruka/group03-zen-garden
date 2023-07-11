@@ -72,7 +72,7 @@ a:hover,
   color: #fff;
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s linear infinite;
+  animation: move-left-right 3s linear infinite;
 }
 @keyframes move-left-right {
   0% {
@@ -150,13 +150,13 @@ html {
     padding: 2%;
   }
   h1 {
-    top: 11rem;
-    left: 15rem;
+    top: 7em;
+    left: 10.5em;
     border: 1px solid #ccc;
     border-radius: 6px;
-    transform: rotate(10deg);
     border: 2px solid #333;
     padding: 1em;
+    text-shadow: 1px 1px 1px black;
     background-image: url(./svg-image.svg);
     background-size: 1.5em;
     background-origin: padding-box;
@@ -166,13 +166,13 @@ html {
   [role=banner]::before {
     content: "";
     display: block;
-    border-top: 3px solid #333;
+    border-top: 3px solid rgb(99, 99, 99);
     position: absolute;
     border-radius: 100px;
     width: 200px;
     height: 200px;
     color: #333;
-    transform: translate(150%, 60%);
+    transform: translate(150%, 57%);
   }
   h2 {
     padding: 0.5rem;
@@ -222,9 +222,6 @@ html {
     background-color: #556b2f;
     width: 650px;
     z-index: 2;
-    border-top-right-radius: 30px;
-    border-bottom: 2px solid #556b2f;
-    border-bottom-right-radius: 10px;
     border-left: 5px solid rgb(243, 243, 140);
   }
   .summary :last-child:not(abbr):not(a) {
@@ -299,7 +296,7 @@ html {
     background-color: #faedcd;
     padding: 1%;
     border: 10px solid #556b2f;
-    border-width: 50px 150px 20px;
+    border-width: 40px 150px 30px;
     font-size: 17.6px;
   }
   .explanation abbr {
@@ -312,7 +309,7 @@ html {
     border-bottom: 1px solid #faedcd;
   }
   .explanation p {
-    padding: 3% 5%;
+    padding: 2% 5%;
     background-color: #556b2f;
     color: #faedcd;
     font-weight: 400;

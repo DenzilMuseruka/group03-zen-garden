@@ -71,7 +71,7 @@ a:hover,
   color: #fff;
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s linear infinite;
+  animation: move-left-right 3s linear infinite;
 }
 @keyframes move-left-right {
   0% {
@@ -233,7 +233,7 @@ h2 {
 h1 {
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s linear infinite;
+  animation: move-left-right 3s linear infinite;
 }
 @keyframes move-left-right {
   0% {
