@@ -507,6 +507,10 @@ html {
 
 @media only screen and (max-width: 600px) {
 
+  body {
+    animation: changing-background 4s ease infinite;
+  }
+
   h3 {
     text-decoration: underline;
   }
@@ -555,6 +559,25 @@ html {
     animation: swing-by 5s infinite alternate ease-in-out -7.5s;
     animation-fill-mode: forwards;
     transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+  }
+
+
+  @keyframes changing-background {
+    0% {
+      background: $background-color;
+    }
+
+    25% {
+      background: #7EBD60;
+    }
+
+    50% {
+      background: #498C28;
+    }
+
+    100% {
+      background: $background-color;
+    }
   }
 }
 
