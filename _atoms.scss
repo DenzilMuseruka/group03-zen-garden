@@ -83,6 +83,21 @@
   opacity: $opacity;
 }
 
+@mixin test {
+  --timing: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation: blink 2s infinite var(--timing) 300ms;
+
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+}
+
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
 h2,
 h3,

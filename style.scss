@@ -78,6 +78,21 @@ html {
     text-shadow: 2px 2px 0px $text-dark;
   }
 
+  h2::before {
+    content: "";
+    position: absolute;
+    background-image: url(assets/eye.png);
+    background-size: cover;
+    width: 40px;
+    height: 32px;
+    bottom: 7.6em;
+    right: -.43em;
+    border-radius: 50px;
+    z-index: 90000;
+    opacity: 1;
+    @include atoms.test;
+  }
+
 
   // Bird img upload and positioning
   header {
@@ -214,10 +229,23 @@ html {
     }
   }
 
+  .explanation::before {
+    content: "";
+    background-image: url(assets/flower.webp);
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+    transform: translate(-10%, -8%);
+  }
+
   .participation {
     grid-column: 1/2;
     grid-row: 2/3;
     padding: 3%;
+    border: 5px solid $primary;
+    box-shadow: 0 0 10px $text-dark;
+    margin: 2%;
 
     p {
       width: 55ch;
@@ -271,6 +299,22 @@ html {
     padding-bottom: 5%;
     gap: 2rem;
     padding: 3%;
+    margin: 2%;
+    background-color: $accent2;
+    border-radius: 10px;
+
+    h3 {
+      padding: 2%;
+      position: relative;
+      text-align: center;
+      column-span: all;
+      border-bottom: 1px solid $primary;
+    }
+    p:first-of-type::first-letter {
+      font-size: 2em;
+      color: $primary;
+      margin: 2% 1%;
+    }
   }
 
   [role="contentinfo"] {
@@ -280,15 +324,24 @@ html {
   footer {
     display: flex;
     grid-column: 1/-1;
-
+    border-top: 10px solid $accent1 ;
+    padding-top: 20px;
+    
     a {
       flex: 1 auto;
       justify-content: space-between;
       text-align: center;
       padding: 0.3rem;
       transition: .5s ease;
-      @include atoms.divider
+      @include atoms.divider;
+      font-weight: normal;
+      transition: all .5s ease;
+      
+      &:hover {
+        font-weight: bolder;
+      }
     }
+    
   }
 
   .wrapper {
@@ -473,6 +526,8 @@ html {
     display: flex;
     grid-column: 1/-1;
     grid-row: 2/3;
+    border-top: 10px solid $primary;
+    padding: 2% 3% 0;
 
     h3 {
       display: none;
@@ -482,13 +537,32 @@ html {
       display: flex;
       list-style: none;
       width: 100%;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      background-color: $primary;
+      padding: 3%;
     }
 
     a {
       text-decoration: none;
-      border-bottom: none;
+      border-bottom: 1px solid #7a7a7a;
+      border-top: 1px solid #7a7a7a;
       flex: 1 auto;
+      color: $grey-sidebar;
+      padding: 2% 0;
+    
+      &:hover {
+        border-bottom: 1px solid $grey-sidebar;
+        border-top: 1px solid $grey-sidebar;
+        font-weight: 900;
+        transition: all .3s ease-in;
+    
+    
+    
+      }
+    }
+    abbr {
+      color: $grey-sidebar;
+      cursor: pointer;
     }
   }
 

@@ -119,11 +119,6 @@ section h3 {
   border-top-left-radius: 100%;
 }
 
-.requirements {
-  border-bottom: 15px solid #228b22;
-  border-top-left-radius: 100%;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -182,6 +177,29 @@ html {
     transform: translate(0.5%, 415%);
     z-index: 3;
     text-shadow: 2px 2px 0px #333;
+  }
+  h2::before {
+    content: "";
+    position: absolute;
+    background-image: url(assets/eye.png);
+    background-size: cover;
+    width: 40px;
+    height: 32px;
+    bottom: 7.6em;
+    right: -0.43em;
+    border-radius: 50px;
+    z-index: 90000;
+    opacity: 1;
+    --timing: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: blink 2s infinite var(--timing) 300ms;
+  }
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
   header {
     padding: 1rem;
@@ -314,10 +332,22 @@ html {
     color: #faedcd;
     font-weight: 400;
   }
+  .explanation::before {
+    content: "";
+    background-image: url(assets/flower.webp);
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+    transform: translate(-10%, -8%);
+  }
   .participation {
     grid-column: 1/2;
     grid-row: 2/3;
     padding: 3%;
+    border: 5px solid #556b2f;
+    box-shadow: 0 0 10px #333;
+    margin: 2%;
   }
   .participation p {
     width: 55ch;
@@ -373,6 +403,21 @@ html {
     padding-bottom: 5%;
     gap: 2rem;
     padding: 3%;
+    margin: 2%;
+    background-color: #faedcd;
+    border-radius: 10px;
+  }
+  .requirements h3 {
+    padding: 2%;
+    position: relative;
+    text-align: center;
+    column-span: all;
+    border-bottom: 1px solid #556b2f;
+  }
+  .requirements p:first-of-type::first-letter {
+    font-size: 2em;
+    color: #556b2f;
+    margin: 2% 1%;
   }
   [role=contentinfo] {
     font-style: italic;
@@ -380,6 +425,8 @@ html {
   footer {
     display: flex;
     grid-column: 1/-1;
+    border-top: 10px solid #228b22;
+    padding-top: 20px;
   }
   footer a {
     flex: 1 auto;
@@ -389,6 +436,11 @@ html {
     transition: 0.5s ease;
     border-bottom: 15px solid #228b22;
     border-top-left-radius: 100%;
+    font-weight: normal;
+    transition: all 0.5s ease;
+  }
+  footer a:hover {
+    font-weight: bolder;
   }
   .wrapper {
     display: grid;
@@ -549,6 +601,8 @@ html {
     display: flex;
     grid-column: 1/-1;
     grid-row: 2/3;
+    border-top: 10px solid #556b2f;
+    padding: 2% 3% 0;
   }
   .zen-resources h3 {
     display: none;
@@ -557,12 +611,27 @@ html {
     display: flex;
     list-style: none;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    background-color: #556b2f;
+    padding: 3%;
   }
   .zen-resources a {
     text-decoration: none;
-    border-bottom: none;
+    border-bottom: 1px solid #7a7a7a;
+    border-top: 1px solid #7a7a7a;
     flex: 1 auto;
+    color: rgb(243, 243, 140);
+    padding: 2% 0;
+  }
+  .zen-resources a:hover {
+    border-bottom: 1px solid rgb(243, 243, 140);
+    border-top: 1px solid rgb(243, 243, 140);
+    font-weight: 900;
+    transition: all 0.3s ease-in;
+  }
+  .zen-resources abbr {
+    color: rgb(243, 243, 140);
+    cursor: pointer;
   }
   abbr {
     cursor: help;

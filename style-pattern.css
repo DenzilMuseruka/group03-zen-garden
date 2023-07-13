@@ -118,11 +118,6 @@ section h3 {
   border-top-left-radius: 100%;
 }
 
-.requirements {
-  border-bottom: 15px solid #228b22;
-  border-top-left-radius: 100%;
-}
-
 * {
   box-sizing: border-box;
 }
