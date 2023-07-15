@@ -36,7 +36,7 @@ section {
 }
 
 .colors {
-  @include atoms.set-flex();
+  //@include atoms.set-flex();
 
   > h3 {
     width: 100%;
@@ -78,17 +78,17 @@ section {
 }
 
 .element a:hover {
-  @include atoms.link-hover();
+  //@include atoms.link-hover();
   padding: 0.25rem;
 }
 
-.uppercase {
-  @include atoms.uppercase();
-}
+// .uppercase {
+//   //@include atoms.uppercase();
+// }
 
-.uppercase-light {
-  @include atoms.uppercase($text-light);
-}
+// .uppercase-light {
+//  // @include atoms.uppercase($text-light);
+// }
 
 header h1 {
   float: right;
@@ -105,13 +105,13 @@ h2 {
     $grey-sidebar,
     lighten($accent1, 10)
   );
-  @include atoms.webkit-background();
+  //@include atoms.webkit-background();
 }
 
-h1 {
-  @include atoms.animated-block();
-}
+// h1 {
+//   @include atoms.animated-block();
+// }
 
-section h3 {
-  @include atoms.divider();
-}
+// section h3 {
+//   @include atoms.divider();
+// }
