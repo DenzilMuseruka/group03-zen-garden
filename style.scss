@@ -37,11 +37,10 @@ html {
   $svgImagePath: "./svg-image.svg";
 
   h1 {
-    top: 11rem;
-    left: 15rem;
+    top: 7em;
+    left: 10.5em;
     border: 1px solid #ccc;
     border-radius: 6px;
-    transform: rotate(10deg);
     border: 2px solid $text-dark;
     padding: 1em;
 
@@ -56,13 +55,13 @@ html {
   [role="banner"]::before {
     content: "";
     display: block;
-    border-top: 3px solid $text-dark;
+    border-top: 3px solid rgb(99, 99, 99);
     position: absolute;
     border-radius: 100px;
     width: 200px;
     height: 200px;
     color: $text-dark;
-    transform: translate(150%, 60%);
+    transform: translate(150%, 57%);
   }
 
   h2 {
@@ -72,7 +71,22 @@ html {
     position: absolute;
     transform: translate(0.5%, 415%);
     z-index: 3;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
+    text-shadow: 2px 2px 0px $text-dark;
+  }
+
+  h2::before {
+    content: "";
+    position: absolute;
+    background-image: url(assets/eye.png);
+    background-size: cover;
+    width: 40px;
+    height: 32px;
+    bottom: 7.6em;
+    right: -.43em;
+    border-radius: 50px;
+    z-index: 90000;
+    opacity: 1;
+    @include atoms.test;
   }
 
   // Bird img upload and positioning
@@ -113,9 +127,6 @@ html {
       background-color: $primary;
       width: 650px;
       z-index: 2;
-      border-top-right-radius: 30px;
-      border-bottom: 2px solid $primary;
-      border-bottom-right-radius: 10px;
       border-left: 5px solid $grey-sidebar;
     }
 
@@ -191,7 +202,7 @@ html {
     background-color: $accent2;
     padding: 1%;
     border: 10px solid $primary;
-    border-width: 50px 150px 20px;
+    border-width: 40px 150px 30px;
     font-size: 17.6px;
 
     abbr {
@@ -206,17 +217,30 @@ html {
     }
 
     p {
-      padding: 3% 5%;
+      padding: 2% 5%;
       background-color: $primary;
       color: $accent2;
       font-weight: 400;
     }
   }
 
+  .explanation::before {
+    content: "";
+    background-image: url(assets/flower.webp);
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+    transform: translate(-10%, -8%);
+  }
+
   .participation {
     grid-column: 1/2;
     grid-row: 2/3;
     padding: 3%;
+    border: 5px solid $primary;
+    box-shadow: 0 0 10px $text-dark;
+    margin: 2%;
 
     p {
       width: 55ch;
@@ -232,7 +256,6 @@ html {
     opacity: 1;
     width: 360px;
     height: 420px;
-    //margin-top: 20px;
     align-self: center;
     background-color: $accent2;
     padding: 5%;
@@ -268,15 +291,6 @@ html {
       animation: rotate 30s linear infinite;
     }
 
-    // p::after {
-    //   content: "";
-    //   width: 100%;
-    //   height: 1px;
-    //   background-color: $primary;
-    //   position: absolute;
-    //   bottom: 10px;
-    //   left: 0;
-    // }
   }
 
   .requirements {
@@ -286,6 +300,22 @@ html {
     padding-bottom: 5%;
     gap: 2rem;
     padding: 3%;
+    margin: 2%;
+    background-color: $accent2;
+    border-radius: 10px;
+
+    h3 {
+      padding: 2%;
+      position: relative;
+      text-align: center;
+      column-span: all;
+      border-bottom: 1px solid $primary;
+    }
+    p:first-of-type::first-letter {
+      font-size: 2em;
+      color: $primary;
+      margin: 2% 1%;
+    }
   }
 
   [role="contentinfo"] {
@@ -295,7 +325,9 @@ html {
   footer {
     display: flex;
     grid-column: 1/-1;
-
+    border-top: 10px solid $accent1 ;
+    padding-top: 20px;
+    
     a {
       flex: 1 auto;
       justify-content: space-between;
@@ -304,6 +336,7 @@ html {
       transition: 0.5s ease;
       @include atoms.divider;
     }
+    
   }
 
   .wrapper {
@@ -484,6 +517,8 @@ html {
     display: flex;
     grid-column: 1/-1;
     grid-row: 2/3;
+    border-top: 10px solid $primary;
+    padding: 2% 3% 0;
 
     h3 {
       display: none;
@@ -493,13 +528,32 @@ html {
       display: flex;
       list-style: none;
       width: 100%;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      background-color: $primary;
+      padding: 3%;
     }
 
     a {
       text-decoration: none;
-      border-bottom: none;
+      border-bottom: 1px solid #7a7a7a;
+      border-top: 1px solid #7a7a7a;
       flex: 1 auto;
+      color: $grey-sidebar;
+      padding: 2% 0;
+    
+      &:hover {
+        border-bottom: 1px solid $grey-sidebar;
+        border-top: 1px solid $grey-sidebar;
+        font-weight: 900;
+        transition: all .3s ease-in;
+    
+    
+    
+      }
+    }
+    abbr {
+      color: $grey-sidebar;
+      cursor: pointer;
     }
   }
 
@@ -545,6 +599,44 @@ html {
     h3,
     p {
       margin: 20px;
+    }
+  }
+
+  li a:hover {
+    color: gray;
+    transition: color 5s ease-in;
+  }
+
+  /* Keyframe animation */
+  @keyframes swing-by {
+    100% {
+      transform: rotateY(-40deg) rotateX(-43deg);
+    }
+  }
+
+  /* Apply animation to an element */
+  h3 {
+    animation: swing-by 5s infinite alternate ease-in-out -7.5s;
+    animation-fill-mode: forwards;
+    transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+  }
+
+
+  @keyframes changing-background {
+    0% {
+      background: $background-color;
+    }
+
+    25% {
+      background: #7EBD60;
+    }
+
+    50% {
+      background: #498C28;
+    }
+
+    100% {
+      background: $background-color;
     }
   }
 }

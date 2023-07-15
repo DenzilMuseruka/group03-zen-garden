@@ -34,7 +34,7 @@
 @mixin animated-block {
   border-radius: 4px;
   position: relative;
-  animation: move-left-right 5s linear infinite;
+  animation: move-left-right 3s linear infinite;
 
   @keyframes move-left-right {
     0% {
@@ -90,6 +90,21 @@
   position: $elem-position;
   z-index: $z-index;
   opacity: $opacity;
+}
+
+@mixin test {
+  --timing: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation: blink 2s infinite var(--timing) 300ms;
+
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
 }
 
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
