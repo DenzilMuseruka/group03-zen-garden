@@ -366,6 +366,7 @@ html {
     color: #faedcd;
     font-weight: 400;
   }
+
   .participation {
     grid-column: 1/2;
     grid-row: 2/3;
@@ -1138,38 +1139,38 @@ html {
   }
 }
 
-  /* Keyframe animation */
-  @keyframes swing-by {
-    100% {
-      transform: rotateY(-40deg) rotateX(-43deg);
-    }
-  }
-
-  /* Apply animation to an element */
-  h3 {
-    animation: swing-by 5s infinite alternate ease-in-out -7.5s;
-    animation-fill-mode: forwards;
-    transform: rotateY(40deg) rotateX(33deg) translateZ(0);
-  }
-
-  @keyframes changing-background {
-    0% {
-      background: rgba(121, 173, 32, 0.6352941176);
-    }
-
-    25% {
-      background: #7EBD60;
-    }
-
-    50% {
-      background: #498C28;
-    }
-
-    100% {
-      background: rgba(121, 173, 32, 0.6352941176);
-    }
+/* Keyframe animation */
+@keyframes swing-by {
+  100% {
+    transform: rotateY(-40deg) rotateX(-43deg);
   }
 }
+
+/* Apply animation to an element */
+h3 {
+  animation: swing-by 5s infinite alternate ease-in-out -7.5s;
+  animation-fill-mode: forwards;
+  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+}
+
+@keyframes changing-background {
+  0% {
+    background: rgba(121, 173, 32, 0.6352941176);
+  }
+
+  25% {
+    background: #7EBD60;
+  }
+
+  50% {
+    background: #498C28;
+  }
+
+  100% {
+    background: rgba(121, 173, 32, 0.6352941176);
+  }
+}
+
 
 
 /*# sourceMappingURL=style.css.map */
