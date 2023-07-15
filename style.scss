@@ -834,76 +834,17 @@ html {
     cursor: pointer;
   }
 
-  .design-archives li:nth-child(odd) {
-    /* background: linear-gradient(to right, #556b2f, #279f27);
-    margin-top: 2em;
-    text-align: left;
-    padding-left: 5%;
-    transform: perspective(500px) rotateY(45deg); */
-  }
-
-  /* .design-archives li:nth-child(odd)::after {
-    content: "<";
-    position: absolute;
-    font-size: 32px;
-    color: rgb(243, 243, 140);
-    left: 70%;
-  }
-
-  .design-archives li:nth-child(even) {
-    background: linear-gradient(to left, #556b2f, #279f27);
-    text-align: right;
-    padding-right: 5%;
-    margin-top: 2em;
-    transform: perspective(500px) rotateY(-45deg);
-  }
-
-  .design-archives li:nth-child(even)::after {
-    content: ">";
-    position: absolute;
-    font-size: 32px;
-    color: rgb(243, 243, 140);
-    left: 10%;
-  } */
+ 
 
   .design-archives a {
     color: #556b2f;
     padding-bottom: 15em;
   }
 
-  /* .design-archives li:nth-child(odd):hover {
-    transform: perspective(250px) rotateY(45deg);
-    padding-left: 5%;
-  }
-
-  .design-archives li:nth-child(even):hover {
-    transform: perspective(250px) rotateY(-45deg);
-    padding-right: 5%;
-  } */
-
-  /* .design-archives::after {
-    content: "";
-    width: 15%;
-    height: 426px;
-    background-size: contain;
-    right: 29em;
-    transform: translateY(-13.5em);
-    background-image: url("assets/stick.webp"), url("assets/stick.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    z-index: 0;
-    opacity: 1;
-  } */
-
   .zen-resources {
     display: block;
-    /* grid-column: 1/-1;
-    grid-row: 2/3; */
     border-top: 10px solid #556b2f;
     padding: 2%;
-    /*margin-top: 15em; */
   }
 
   .zen-resources h3 {
