@@ -1,7 +1,12 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 // mixins to take care of repeated patterns.
-@mixin set-font($size: 1em, $line-height: 1.8em, $font: $fonts-body, $color: black) {
+@mixin set-font(
+  $size: 1em,
+  $line-height: 1.8em,
+  $font: $fonts-body,
+  $color: black
+) {
   font-family: $font;
   font-size: $size;
   line-height: $line-height;
@@ -55,13 +60,18 @@
   -webkit-text-fill-color: transparent;
 }
 
-
 @mixin link-hover($color: $grey-sidebar) {
   border-bottom: 1px solid $color;
-  transition: border-bottom ease-in-out .3s;
+  transition: border-bottom ease-in-out 0.3s;
 }
 
-@mixin first-letter($color: $accent1, $font-size: 3em, $line-height: 0.5em, $float: left, $clear: both) {
+@mixin first-letter(
+  $color: $accent1,
+  $font-size: 3em,
+  $line-height: 0.5em,
+  $float: left,
+  $clear: both
+) {
   color: $accent2;
   font-size: 5em;
   line-height: $line-height;
@@ -71,7 +81,6 @@
   margin: 0.1em 0.1em 0.2em 0;
   text-shadow: 2px 2px 2px black;
 }
-
 
 @mixin bg-images($bg-img1, $bg-img2, $elem-position, $z-index, $opacity) {
   background-image: url($bg-img1), url($bg-img2);
@@ -107,7 +116,6 @@ h2 {
   font-size: 6em;
   letter-spacing: 1px;
   line-height: 1em;
-
 }
 
 h3 {
@@ -117,7 +125,6 @@ h3 {
   line-height: 1em;
   padding: 0.5em 0 0 0;
   color: black;
- 
 }
 
 h4 {
@@ -144,4 +151,3 @@ a:hover,
 .design-selection a:hover {
   @include link-hover();
 }
-

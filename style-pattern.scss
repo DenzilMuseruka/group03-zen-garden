@@ -1,11 +1,11 @@
-@use 'variables' as *; //this puts all the variables in the global namespace.
-@use 'atoms';
-@use 'molecules';
-
+@use "variables" as *; //this puts all the variables in the global namespace.
+@import "atoms";
+@import "molecules";
 
 * {
   box-sizing: border-box;
 }
+
 html {
   background-color: $background-color;
   padding: 5%;
@@ -18,8 +18,14 @@ body {
   margin: 0;
   padding: 1em;
 }
+
 .introduction {
-  background: linear-gradient(80deg, lighten($accent1,10), $accent2, lighten($background-color,20));
+  background: linear-gradient(
+    80deg,
+    lighten($accent1, 10),
+    $accent2,
+    lighten($background-color, 20)
+  );
   padding: 1em;
 }
 
@@ -27,61 +33,78 @@ section {
   background-color: #fff;
   padding: 1em;
   margin: 1em;
-  
 }
+
 .colors {
   @include atoms.set-flex();
+
   > h3 {
     width: 100%;
     flex: 1 0 100%;
   }
+
   > figure {
     margin: 0;
     flex: 1 1 25%;
   }
 }
+
 .swatch {
   width: 100%;
   height: 100px;
   border: 1px solid;
 }
+
 .primary {
   background-color: $primary;
 }
+
 .accent1 {
   background-color: $accent1;
 }
+
 .accent2 {
   background-color: $accent2;
 }
+
 .text-dark {
   background-color: $text-dark;
 }
+
 .element {
   border: 1px solid;
   margin: 0.5em;
   padding: 1em;
 }
+
 .element a:hover {
   @include atoms.link-hover();
   padding: 0.25rem;
 }
+
 .uppercase {
-  @include atoms.uppercase;
+  @include atoms.uppercase();
 }
+
 .uppercase-light {
   @include atoms.uppercase($text-light);
-  
 }
+
 header h1 {
   float: right;
 }
+
 main h2 {
   margin-top: 10px;
 }
+
 h2 {
-  background: linear-gradient(to top, $text-light, $grey-sidebar, lighten($accent1,
-        10));
+  background: linear-gradient(
+    to top,
+    $text-light,
+    $grey-sidebar,
+    lighten($accent1, 10)
+  );
   @include atoms.webkit-background();
 }
 

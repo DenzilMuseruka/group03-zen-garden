@@ -1,21 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
 
-$fonts-body: 'Montserrat Alternates',
-sans-serif;
+$fonts-body: "Montserrat Alternates", sans-serif;
 
-$fonts-headline: 'indie flower', cursive;
-
-// $background-color:#87ceeb;
-// $primary:  #556b2f;
-// $accent1: #228b22;
-// $accent2: #faedcd;
-// $grey-sidebar: rgb(243, 243, 140);
-// $text-dark: #333;
-// $text-light: #fff;
-
-$background-color: lighten(saturate(#556b2fa2,30),10);
+$fonts-headline: "indie flower", cursive;
+$background-color: lighten(saturate(#556b2fa2, 30), 10);
 $primary: #556b2f;
 $accent1: #228b22;
 $accent2: #faedcd;
@@ -23,11 +13,25 @@ $grey-sidebar: rgb(243, 243, 140);
 $text-dark: #333;
 $text-light: #fff;
 
-$main-bg: linear-gradient(80deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+$main-bg: linear-gradient(
+  80deg,
+  lighten($accent1, 15),
+  darken($accent2, 10%),
+  lighten($background-color, 20)
+);
 
-$wrapper-bg: linear-gradient(50deg, lighten($accent1, 15), darken($accent2, 10%), lighten($background-color, 20));
+$wrapper-bg: linear-gradient(
+  50deg,
+  lighten($accent1, 15),
+  darken($accent2, 10%),
+  lighten($background-color, 20)
+);
 
-$ul-bg: linear-gradient(57deg, transparent 80%, saturate($background-color, 10) 80%);
+$ul-bg: linear-gradient(
+  57deg,
+  transparent 80%,
+  saturate($background-color, 10) 80%
+);
 
 //Url's for bg images (webp)
 $bird-bg-webp: "assets/bird-bg.webp";
@@ -42,4 +46,3 @@ $road-bg-jpg: "assets/road.jpg";
 $earth-bg-png: "assets/earth-cropped.png";
 $flower-png: "assets/flower.png";
 $wood-png: "assets/stick.png";
-

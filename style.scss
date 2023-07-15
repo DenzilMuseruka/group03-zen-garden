@@ -1,9 +1,6 @@
-@use 'variables' as *; //this puts all the variables in the global namespace.
-
-@use 'atoms';
-
-@use 'molecules';
-
+@use "variables" as *; //this puts all the variables in the global namespace.
+@use "atoms";
+@use "molecules";
 
 * {
   box-sizing: border-box;
@@ -14,7 +11,6 @@ html {
 }
 
 @media only screen and (min-width: 65em) {
-
   body {
     font-family: $fonts-body;
     color: $text-dark;
@@ -31,6 +27,7 @@ html {
 
   //First section-header
   .intro {
+    align-self: start;
     position: relative;
     background-color: $primary;
     //z-index: 1;
@@ -48,7 +45,6 @@ html {
     border: 2px solid $text-dark;
     padding: 1em;
 
-
     background-image: url(#{$svgImagePath});
     background-size: 1.5em;
     background-origin: padding-box;
@@ -56,7 +52,7 @@ html {
     background-blend-mode: color-burn;
   }
 
-  //Board handle 
+  //Board handle
   [role="banner"]::before {
     content: "";
     display: block;
@@ -78,7 +74,6 @@ html {
     z-index: 3;
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.467);
   }
-
 
   // Bird img upload and positioning
   header {
@@ -170,7 +165,7 @@ html {
       box-shadow: 0px 0px 15px black;
       width: 100%;
       inset: 0;
-      @include atoms.bg-images($road-bg-webp, $road-bg-jpg, absolute, 1, 0.3)
+      @include atoms.bg-images($road-bg-webp, $road-bg-jpg, absolute, 1, 0.3);
     }
 
     & :is(p) {
@@ -258,7 +253,13 @@ html {
     //Earth img upload and positioning
     &::before {
       content: "";
-      @include atoms.bg-images($earth-bg-webp, $earth-bg-png, absolute, 2, 0.15);
+      @include atoms.bg-images(
+        $earth-bg-webp,
+        $earth-bg-png,
+        absolute,
+        2,
+        0.15
+      );
       height: 350px;
       width: 100%;
       top: 4.5rem;
@@ -300,8 +301,8 @@ html {
       justify-content: space-between;
       text-align: center;
       padding: 0.3rem;
-      transition: .5s ease;
-      @include atoms.divider
+      transition: 0.5s ease;
+      @include atoms.divider;
     }
   }
 
@@ -339,7 +340,7 @@ html {
       &::after {
         content: "";
         position: absolute;
-        width: .05em;
+        width: 0.05em;
         height: 100%;
         background-color: $grey-sidebar;
         transform: translateX(25px);
@@ -351,7 +352,7 @@ html {
 
         &::before {
           content: "";
-          width: .4rem;
+          width: 0.4rem;
           border-radius: 50px;
           aspect-ratio: 1/1;
           background-color: $grey-sidebar;
@@ -365,11 +366,11 @@ html {
         }
 
         a:first-child::after {
-          content: ' 🌿';
+          content: " 🌿";
         }
 
         a:last-child::after {
-          content: ' 🌿';
+          content: " 🌿";
         }
 
         a {
@@ -379,7 +380,7 @@ html {
 
         &:hover {
           transform: scale(1.01);
-          transition: all .5s ease;
+          transition: all 0.5s ease;
         }
       }
     }
@@ -394,7 +395,6 @@ html {
     grid-row: 1/2;
     position: relative;
     justify-self: center;
-    
 
     h3 {
       text-align: center;
@@ -408,8 +408,6 @@ html {
       z-index: 2;
       align-self: center;
       justify-items: end;
-      
-      
     }
 
     li {
@@ -422,7 +420,7 @@ html {
       line-height: 3.5em;
       transition: 0.3s ease;
       cursor: pointer;
-     // margin-top: 3em;
+      // margin-top: 3em;
 
       &:nth-child(odd) {
         background: linear-gradient(to right, $primary, lighten($accent1, 5));
@@ -440,9 +438,9 @@ html {
         }
       }
     }
+
     li:nth-child(even) {
-      background: linear-gradient(to left, $primary,
-          lighten($accent1, 5));
+      background: linear-gradient(to left, $primary, lighten($accent1, 5));
       text-align: right;
       padding-right: 5%;
       margin-top: 2em;
@@ -456,6 +454,7 @@ html {
         left: 10%;
       }
     }
+
     a {
       color: $grey-sidebar;
     }
@@ -469,8 +468,8 @@ html {
       transform: perspective(250px) rotateY(-45deg);
       padding-right: 5%;
     }
-    
   }
+
   .design-archives::after {
     content: "";
     width: 15%;
@@ -479,9 +478,8 @@ html {
     right: 10em;
     transform: translateY(-13.5em);
     @include atoms.bg-images($wood-webp, $wood-png, absolute, 0, 1);
-    
   }
-  
+
   .zen-resources {
     display: flex;
     grid-column: 1/-1;
@@ -505,12 +503,10 @@ html {
     }
   }
 
-
   abbr {
     cursor: help;
     color: $primary;
     text-decoration: none;
-
   }
 }
 
@@ -521,12 +517,8 @@ html {
 }
 
 @media only screen and (max-width: 600px) {
-
-
-
   h3 {
     text-decoration: underline;
-
   }
 
   header {
